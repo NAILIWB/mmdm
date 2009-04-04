@@ -5,7 +5,6 @@ import javax.swing.JButton;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -43,12 +42,13 @@ public class Login extends JApplet{
 		login.init();
 		login.start();
 		frame.getContentPane().add(login);
-		frame.setSize(400,400);
+		frame.setSize(login.getSize());
 		frame.setVisible(true);
 	}
 	public void init() {
 		try {
 			getContentPane().setLayout(null);
+			this.setSize(370,180);
 			{
 				jPanel1 = new JPanel();
 				GridLayout jPanel1Layout = new GridLayout(2, 2);
@@ -66,7 +66,7 @@ public class Login extends JApplet{
 					jLabel1.setText("Usuário");
 					jLabel1.setFont(new java.awt.Font("Tahoma",1,11));
 					jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
-					jLabel1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Proprietario.GIF")));
+					
 				}
 				{
 					jTextField1 = new JTextField();
@@ -81,7 +81,7 @@ public class Login extends JApplet{
 					jLabel2.setText("Senha");
 					jLabel2.setFont(new java.awt.Font("Tahoma",1,11));
 					jLabel2.setHorizontalAlignment(SwingConstants.CENTER);
-					jLabel2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Veiculo.GIF")));
+					
 				}
 				{
 					jPasswordField1 = new JPasswordField();
