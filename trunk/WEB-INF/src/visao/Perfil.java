@@ -185,6 +185,7 @@ public void init() {
 		}
 	}//Fim do método init
 
+@SuppressWarnings("unchecked")
 private void adicionaColuna(){
 	
 	coluna=new Vector();
