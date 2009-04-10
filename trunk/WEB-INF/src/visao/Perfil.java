@@ -82,7 +82,7 @@ public void init() {
 							jPanel1.add(jButton1);
 							jButton1.setText("Incluir");
 							jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/07_Incluir.GIF")));
-							jButton1.setBounds(181, 124, 112, 24);
+							jButton1.setBounds(179, 139, 118, 26);
 							jButton1.setToolTipText("Clique para incluir um novo perfil.");
 						}
 						{
@@ -142,13 +142,15 @@ public void init() {
 							jPanel4Layout.setVgap(5);
 							jPanel2.add(jPanel4);
 							jPanel4.setLayout(jPanel4Layout);
-							jPanel4.setBounds(120, 147, 241, 26);
+							jPanel4.setBounds(120, 147, 241, 40);
+							jPanel4.setBorder(BorderFactory.createTitledBorder(""));
 							{
 								jButton2 = new JButton();
 								jPanel4.add(jButton2);
 								jButton2.setText("Consultar");
 								jButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Consultas.GIF")));
 								jButton2.setToolTipText("Clique para consultar os perfis cadastrados.");
+								jButton2.setSize(118, 26);
 							}
 							{
 								jButton3 = new JButton();
@@ -156,6 +158,7 @@ public void init() {
 								jButton3.setText("Alterar");
 								jButton3.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/TipoVeiculo.GIF")));
 								jButton3.setToolTipText("Clique para alterar o perfil selecionado.");
+								jButton3.setSize(118, 26);
 							}
 						}
 											}
