@@ -47,10 +47,10 @@ public class CadastraCliente extends JApplet {
 	private JTextField jTextField14;
 	private JLabel jLabel23;
 	private JLabel jLabel21;
+	private JComboBox jComboBox3;
 	private JLabel jLabel22;
 	private JTextField jTextField13;
 	private JTextField jTextField12;
-	private JTextField jTextField11;
 	private JLabel jLabel20;
 	private JLabel jLabel19;
 	private JLabel jLabel18;
@@ -418,14 +418,6 @@ public class CadastraCliente extends JApplet {
 						jLabel20.setBounds(17, 92, 88, 27);
 					}
 					{
-						jTextField11 = new JTextField();
-						jPanel4.add(jTextField11);
-						jTextField11.setBounds(115, 19, 143, 20);
-						jTextField11.setColumns(20);
-						jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
-						jTextField11.setSize(150, 23);
-					}
-					{
 						jTextField12 = new JTextField();
 						jPanel4.add(jTextField12);
 						jTextField12.setBounds(115, 56, 143, 23);
@@ -442,6 +434,64 @@ public class CadastraCliente extends JApplet {
 						jTextField13.setHorizontalAlignment(SwingConstants.CENTER);
 						jTextField13.setToolTipText("Informe o número da conta corrente.");
 						jTextField13.setSize(150, 23);
+					}
+					{
+						ComboBoxModel jComboBox3Model = 
+							new DefaultComboBoxModel(
+									new String[] { "",
+											"BANCO ABN AMRO REAL S.A - 356",
+											"BANCO BANERJ S.A - 029",
+											"BANCO BANESTADO S.A - 038",
+											"BANCO BEG S.A - 031",
+											"BANCO BMC S.A - 394",
+											"BANCO BMG S.A - 318",
+											"BANCO BRADESCO S.A - 237",
+											"BANCO CACIQUE S.A - 263",
+											"BANCO CITIBANK S.A - 745",
+											"BANCO COMERCIAL E DE INVESTIMENTO SUDAMERIS S.A - 215",
+											"BANCO COOPERATIVO DO BRASIL S.A - 756",
+											"BANCO COOPERATIVO SICREDI S.A - 748",
+											"BANCO CRUZEIRO DO SUL S.A - 229",
+											"BANCO DA AMAZÔNIA S.A - 003",
+											"BANCO DE PERNAMBUCO S.A - 024",
+											"BANCO DO BRASIL S.A - 001",
+											"BANCO DO ESTADO DE SANTA CATARINA S.A - 027",
+											"BANCO DO ESTADO DE SÃO PAULO S.A - 033",
+											"BANCO DO ESTADO DE SERGIPE S.A - 047",
+											"BANCO DO ESTADO DO PARÁ S.A - 037",
+											"BANCO DO ESTADO DO PIAUÍ S.A - 039",
+											"BANCO DO ESTADO DO RIO GRANDE DO SUL S.A - 041",
+											"BANCO DO NORDESTE DO BRASIL S.A - 004",
+											"BANCO FINASA S.A - 175",
+											"BANCO FININVEST S.A - 252",
+											"BANCO IBI S.A - 063",
+											"BANCO ITAÚ S.A - 341",
+											"BANCO MERCANTIL DE SÃO PAULO S.A - 392",
+											"BANCO MERCANTIL DO BRASIL S.A - 389",
+											"BANCO NOSSA CAIXA S.A - 151",
+											"BANCO PANAMERICANO S.A - 623",
+											"BANCO RURAL S.A - 453",
+											"BANCO SAFRA S.A",
+											"BANCO SANTANDER BRASIL S.A - 353",
+											"BANCO SANTANDER MERIDIONAL S.A - 008",
+											"BANCO SANTANDER S.A - 351",
+											"BANCO SUDAMERIS BRASIL S.A - 347",
+											"BANCO DO ESTADO DO ESPÍRITO SANTO S.A - 021",
+											"BANKBOSTON BANCO MÚLTIPLO S.A - 479",
+											"BANCO DE BRASÍLIA S.A - 070",
+											"CAIXA ECONÔMICA FEDERAL - 104",
+											"HSBC BANK BRASIL S.A - 399",
+											"PARANÁ BANCO S.A - 254",
+											"UNIBANCO - UNIÃO DE BANCOS BRASILEIROS S.A - 499",
+											"UNICARD BANCO MÚLTIPLO S.A - 230"});
+						jComboBox3 = new JComboBox();
+						jPanel4.add(jComboBox3);
+						jComboBox3.setModel(jComboBox3Model);
+						jComboBox3.setBounds(115, 20, 333, 17);
+						jComboBox3.setSize(333, 23);
+						jComboBox3.setToolTipText("Selecione o Banco.");
+						jComboBox3.setMaximumRowCount(4);
+						
 					}
 				}
 				{
