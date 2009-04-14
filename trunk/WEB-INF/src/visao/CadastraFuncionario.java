@@ -39,14 +39,15 @@ public class CadastraFuncionario extends JApplet {
 	private JLabel jLabel5;
 	private JTextField jTextField5;
 	private JTextField jTextField6;
-	private JButton jButton2;
-	private JButton jButton1;
 	private JPanel jPanel6;
 	private JFormattedTextField jFormattedTextField7;
 	private JFormattedTextField jFormattedTextField6;
 	private JTextField jTextField14;
 	private JLabel jLabel23;
 	private JLabel jLabel21;
+	private JButton jButton1;
+	private JTextField jTextField15;
+	private JLabel jLabel24;
 	private JTextField jTextField11;
 	private JComboBox jComboBox3;
 	private JLabel jLabel22;
@@ -142,6 +143,13 @@ public class CadastraFuncionario extends JApplet {
 						jLabel4.setBounds(17, 96, 64, 22);
 					}
 					{
+						jLabel24 = new JLabel();
+						jPanel1.add(jLabel24);
+						jLabel24.setText("Plano de Saúde");
+						jLabel24.setBounds(17, 130, 76, 15);
+						jLabel24.setSize(76, 23);
+					}
+					{
 						jTextField1 = new JTextField();
 						jPanel1.add(jTextField1);
 						jTextField1.setToolTipText("Informe a denominação jurídica da empresa.");
@@ -170,6 +178,13 @@ public class CadastraFuncionario extends JApplet {
 						jPanel1.add(jTextField11);
 						jTextField11.setBounds(148, 96, 122, 23);
 						jTextField11.setToolTipText("Informe a identificação do documento da carteira de trabalho.");
+					}
+					{
+						jTextField15 = new JTextField();
+						jPanel1.add(jTextField15);
+						jTextField15.setBounds(148, 131, 122, 22);
+						jTextField15.setSize(122, 23);
+						jTextField15.setToolTipText("Informe o número do Plano de Saúde.");
 					}
 				}
 				{
@@ -556,16 +571,8 @@ public class CadastraFuncionario extends JApplet {
 					jButton1 = new JButton();
 					jPanel6.add(jButton1);
 					jButton1.setText("Incluir");
-					jButton1.setToolTipText("Clique para gravar os dados.");
 					jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/07_Incluir.GIF")));
-					jButton1.setSize(118, 26);
-				}
-				{
-					jButton2 = new JButton();
-					jPanel6.add(jButton2);
-					jButton2.setText("Sair");
-					jButton2.setToolTipText("Clique para fechar o formulário.");
-					jButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Sair.GIF")));
+					jButton1.setToolTipText("Clique para gravar o dados.");
 				}
 			}
 		} catch (Exception e) {
