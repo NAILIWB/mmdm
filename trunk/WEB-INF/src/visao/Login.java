@@ -25,7 +25,7 @@ public class Login extends JApplet{
 
 
     public static void main(String[] args) {
-            JFrame frame = new JFrame("Acesso ao BrAdmin");
+            JFrame frame = new JFrame("ACESSO AO BRADMIN");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             Login login= new Login();
             login.init();
