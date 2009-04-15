@@ -39,18 +39,15 @@ public class CadastraFuncionario extends JApplet {
 	private JLabel jLabel5;
 	private JTextField jTextField5;
 	private JTextField jTextField6;
-	private JPanel jPanel6;
-	private JFormattedTextField jFormattedTextField7;
-	private JFormattedTextField jFormattedTextField6;
-	private JTextField jTextField14;
-	private JLabel jLabel23;
+	private JButton jButton2;
 	private JLabel jLabel21;
+	private JComboBox jComboBox1;
+	private JPanel jPanel6;
 	private JButton jButton1;
 	private JTextField jTextField15;
 	private JLabel jLabel24;
 	private JTextField jTextField11;
 	private JComboBox jComboBox3;
-	private JLabel jLabel22;
 	private JTextField jTextField13;
 	private JTextField jTextField12;
 	private JLabel jLabel20;
@@ -84,7 +81,6 @@ public class CadastraFuncionario extends JApplet {
 	private JLabel jLabel2;
 	private JTextField jTextField1;
 	private JLabel jLabel1;
-	private JPanel jPanel5;
 	private JPanel jPanel4;
 	private JPanel jPanel3;
 	private JPanel jPanel2;
@@ -108,14 +104,14 @@ public class CadastraFuncionario extends JApplet {
 			{
 				jTabbedPane1 = new JTabbedPane();
 				getContentPane().add(jTabbedPane1);
-				jTabbedPane1.setBounds(12, 12, 476, 222);
+				jTabbedPane1.setBounds(12, 12, 476, 235);
 				jTabbedPane1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 				{
 					jPanel1 = new JPanel();
 					jTabbedPane1.addTab("Funcionário", null, jPanel1, null);
 					jPanel1.setLayout(null);
 					jPanel1.setBorder(BorderFactory.createTitledBorder(""));
-					jPanel1.setPreferredSize(new java.awt.Dimension(465, 178));
+					jPanel1.setPreferredSize(new java.awt.Dimension(465, 201));
 					jPanel1.setToolTipText("Informe os dados do Funcionário");
 					{
 						jLabel1 = new JLabel();
@@ -132,9 +128,10 @@ public class CadastraFuncionario extends JApplet {
 					{
 						jLabel2 = new JLabel();
 						jPanel1.add(jLabel2);
-						jLabel2.setText("Cpf");
+						jLabel2.setText("C.P.F.");
 						jLabel2.setBounds(17, 34, 64, 25);
 						jLabel2.setSize(64, 23);
+						jLabel2.setToolTipText("Cadastro de Pessoa Física");
 					}
 					{
 						jLabel4 = new JLabel();
@@ -146,8 +143,13 @@ public class CadastraFuncionario extends JApplet {
 						jLabel24 = new JLabel();
 						jPanel1.add(jLabel24);
 						jLabel24.setText("Plano de Saúde");
-						jLabel24.setBounds(17, 130, 76, 15);
-						jLabel24.setSize(76, 23);
+						jLabel24.setBounds(17, 130, 113, 23);
+					}
+					{
+						jLabel21 = new JLabel();
+						jPanel1.add(jLabel21);
+						jLabel21.setText("Perfil");
+						jLabel21.setBounds(17, 165, 64, 23);
 					}
 					{
 						jTextField1 = new JTextField();
@@ -163,7 +165,7 @@ public class CadastraFuncionario extends JApplet {
 						jFormattedTextField1.setToolTipText("Informe os números do CPF. ");
 						jFormattedTextField1.setHorizontalAlignment(SwingConstants.CENTER);
 						jFormattedTextField1.setColumns(14);
-						jFormattedTextField1.setSize(122, 23);
+						jFormattedTextField1.setSize(125, 23);
 					}
 					{
 						jTextField3 = new JTextField();
@@ -171,20 +173,32 @@ public class CadastraFuncionario extends JApplet {
 						jTextField3.setToolTipText("Informe a identificação do documento de identidade.");
 						jTextField3.setBounds(148, 64, 122, 29);
 						jTextField3.setColumns(100);
-						jTextField3.setSize(122, 23);
+						jTextField3.setSize(125, 23);
+						jTextField3.setHorizontalAlignment(SwingConstants.CENTER);
 					}
 					{
 						jTextField11 = new JTextField();
 						jPanel1.add(jTextField11);
-						jTextField11.setBounds(148, 96, 122, 23);
+						jTextField11.setBounds(148, 96, 127, 24);
 						jTextField11.setToolTipText("Informe a identificação do documento da carteira de trabalho.");
+						jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
+						jTextField11.setSize(125, 23);
 					}
 					{
 						jTextField15 = new JTextField();
 						jPanel1.add(jTextField15);
-						jTextField15.setBounds(148, 131, 122, 22);
-						jTextField15.setSize(122, 23);
+						jTextField15.setBounds(148, 130, 123, 25);
 						jTextField15.setToolTipText("Informe o número do Plano de Saúde.");
+						jTextField15.setHorizontalAlignment(SwingConstants.CENTER);
+						jTextField15.setSize(125, 23);
+					}
+					{
+						jComboBox1 = new JComboBox();
+						jPanel1.add(jComboBox1);
+						jComboBox1.setBounds(148, 166, 122, 23);
+						jComboBox1.setSize(125, 23);
+						jComboBox1.setMaximumRowCount(4);
+						jComboBox1.setToolTipText("Selecione o perfil do funcionário.");
 					}
 				}
 				{
@@ -505,57 +519,6 @@ public class CadastraFuncionario extends JApplet {
 						
 					}
 				}
-				{
-					jPanel5 = new JPanel();
-					jPanel5.setLayout(null);
-					jTabbedPane1.addTab("Acesso Remoto", null, jPanel5, null);
-					jPanel5.setBorder(BorderFactory.createTitledBorder(""));
-					{
-						jLabel21 = new JLabel();
-						jPanel5.add(jLabel21);
-						jLabel21.setText("Tipo Acesso");
-						jLabel21.setBounds(17, 17, 73, 29);
-					}
-					{
-						jLabel22 = new JLabel();
-						jPanel5.add(jLabel22);
-						jLabel22.setText("IP Acesso");
-						jLabel22.setBounds(17, 58, 68, 26);
-					}
-					{
-						jLabel23 = new JLabel();
-						jPanel5.add(jLabel23);
-						jLabel23.setText("IP Equipamento");
-						jLabel23.setBounds(17, 96, 97, 27);
-					}
-					{
-						jTextField14 = new JTextField();
-						jPanel5.add(jTextField14);
-						jTextField14.setBounds(115, 20, 154, 23);
-						jTextField14.setToolTipText("Informe o tipo de acesso remoto.");
-						jTextField14.setHorizontalAlignment(SwingConstants.CENTER);
-						jTextField14.setColumns(50);
-						jTextField14.setSize(150, 23);
-					}
-					{
-						jFormattedTextField6 = new JFormattedTextField();
-						jPanel5.add(jFormattedTextField6);
-						jFormattedTextField6.setBounds(114, 59, 151, 23);
-						jFormattedTextField6.setToolTipText("Informe o IP de acesso ao sistema.");
-						jFormattedTextField6.setHorizontalAlignment(SwingConstants.CENTER);
-						jFormattedTextField6.setColumns(50);
-						jFormattedTextField6.setSize(150, 23);
-					}
-					{
-						jFormattedTextField7 = new JFormattedTextField();
-						jPanel5.add(jFormattedTextField7);
-						jFormattedTextField7.setBounds(114, 98, 154, 23);
-						jFormattedTextField7.setHorizontalAlignment(SwingConstants.CENTER);
-						jFormattedTextField7.setColumns(50);
-						jFormattedTextField7.setToolTipText("Informe o número do IP do equipamento.");
-						jFormattedTextField7.setSize(150, 23);
-					}
-				}
 			}
 			{
 				jPanel6 = new JPanel();
@@ -573,6 +536,13 @@ public class CadastraFuncionario extends JApplet {
 					jButton1.setText("Incluir");
 					jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/07_Incluir.GIF")));
 					jButton1.setToolTipText("Clique para gravar o dados.");
+				}
+				{
+					jButton2 = new JButton();
+					jPanel6.add(jButton2);
+					jButton2.setText("Sair");
+					jButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Sair.GIF")));
+					jButton2.setToolTipText("Clique para fechar o formulário.");
 				}
 			}
 		} catch (Exception e) {
