@@ -95,11 +95,11 @@ public class CadastraFuncionario extends JApplet {
 	            
 	                            JFrame frame = new JFrame("DADOS DO FUNCIONÁRIO");
 	                            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	                            CadastraFuncionario cadastraCliente = new CadastraFuncionario();
-	                            cadastraCliente.init();
-	                            cadastraCliente.start();
-	                            frame.getContentPane().add(cadastraCliente);
-	                            frame.setPreferredSize(cadastraCliente.getSize());
+	                            CadastraFuncionario cadastraFuncionario = new CadastraFuncionario();
+	                            cadastraFuncionario.init();
+	                            cadastraFuncionario.start();
+	                            frame.getContentPane().add(cadastraFuncionario);
+	                            frame.setPreferredSize(cadastraFuncionario.getSize());
 	                            frame.setVisible(true);
 	                    }
 	            
@@ -178,7 +178,7 @@ public class CadastraFuncionario extends JApplet {
 	                                            jPanel1.add(jTextField3);
 	                                            jTextField3.setToolTipText("Informe a identificação do documento de identidade.");
 	                                            jTextField3.setBounds(148, 64, 122, 29);
-	                                            jTextField3.setColumns(100);
+	                                            jTextField3.setColumns(50);
 	                                            jTextField3.setSize(125, 23);
 	                                            jTextField3.setHorizontalAlignment(SwingConstants.CENTER);
 	                                    }
@@ -189,6 +189,7 @@ public class CadastraFuncionario extends JApplet {
 	                                            jTextField11.setToolTipText("Informe a identificação do documento da carteira de trabalho.");
 	                                            jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
 	                                            jTextField11.setSize(125, 23);
+	                                            jTextField11.setColumns(20);
 	                                    }
 	                                    {
 	                                            jTextField15 = new JTextField();
@@ -197,6 +198,7 @@ public class CadastraFuncionario extends JApplet {
 	                                            jTextField15.setToolTipText("Informe o número do Plano de Saúde.");
 	                                            jTextField15.setHorizontalAlignment(SwingConstants.CENTER);
 	                                            jTextField15.setSize(125, 23);
+	                                            jTextField15.setColumns(50);
 	                                    }
 	                                    {
 	                                            jComboBox1 = new JComboBox();
