@@ -90,8 +90,60 @@ public class CadastraCliente extends JApplet {
     private JPanel jPanel4;
     private JPanel jPanel3;
     private JPanel jPanel2;
-
-
+    private String despacho[]={"","SIM","NÃO"};
+    private String bancos[]={"",
+            "BANCO ABN AMRO REAL S.A - 356",
+            "BANCO BANERJ S.A - 029",
+            "BANCO BANESTADO S.A - 038",
+            "BANCO BEG S.A - 031",
+            "BANCO BMC S.A - 394",
+            "BANCO BMG S.A - 318",
+            "BANCO BRADESCO S.A - 237",
+            "BANCO CACIQUE S.A - 263",
+            "BANCO CITIBANK S.A - 745",
+            "BANCO COMERCIAL E DE INVESTIMENTO SUDAMERIS S.A - 215",
+            "BANCO COOPERATIVO DO BRASIL S.A - 756",
+            "BANCO COOPERATIVO SICREDI S.A - 748",
+            "BANCO CRUZEIRO DO SUL S.A - 229",
+            "BANCO DA AMAZÔNIA S.A - 003",
+            "BANCO DE PERNAMBUCO S.A - 024",
+            "BANCO DO BRASIL S.A - 001",
+            "BANCO DO ESTADO DE SANTA CATARINA S.A - 027",
+            "BANCO DO ESTADO DE SÃO PAULO S.A - 033",
+            "BANCO DO ESTADO DE SERGIPE S.A - 047",
+            "BANCO DO ESTADO DO PARÁ S.A - 037",
+            "BANCO DO ESTADO DO PIAUÍ S.A - 039",
+            "BANCO DO ESTADO DO RIO GRANDE DO SUL S.A - 041",
+            "BANCO DO NORDESTE DO BRASIL S.A - 004",
+            "BANCO FINASA S.A - 175",
+            "BANCO FININVEST S.A - 252",
+            "BANCO IBI S.A - 063",
+            "BANCO ITAÚ S.A - 341",
+            "BANCO MERCANTIL DE SÃO PAULO S.A - 392",
+            "BANCO MERCANTIL DO BRASIL S.A - 389",
+            "BANCO NOSSA CAIXA S.A - 151",
+            "BANCO PANAMERICANO S.A - 623",
+            "BANCO RURAL S.A - 453",
+            "BANCO SAFRA S.A",
+            "BANCO SANTANDER BRASIL S.A - 353",
+            "BANCO SANTANDER MERIDIONAL S.A - 008",
+            "BANCO SANTANDER S.A - 351",
+            "BANCO SUDAMERIS BRASIL S.A - 347",
+            "BANCO DO ESTADO DO ESPÍRITO SANTO S.A - 021",
+            "BANKBOSTON BANCO MÚLTIPLO S.A - 479",
+            "BANCO DE BRASÍLIA S.A - 070",
+            "CAIXA ECONÔMICA FEDERAL - 104",
+            "HSBC BANK BRASIL S.A - 399",
+            "PARANÁ BANCO S.A - 254",
+            "UNIBANCO - UNIÃO DE BANCOS BRASILEIROS S.A - 499",
+            "UNICARD BANCO MÚLTIPLO S.A - 230"};
+    private String estados[]={"","AC-Acre","AL-Alagoas","AP-Amapá","AM-Amazonas","BA-Bahia",
+            "CE-Ceará","ES-Espírito Santo","GO-Goiás","MA-Maranhão",
+            "MT-Mato Grosso","MS-Mato Grosso do Sul","MG-Minas Gerais",
+            "PA-Pará","PB-Paraíba","PR-Paraná","PE-Pernambuco","PI-Piauí",
+            "RJ-Rio de Janeiro","RN-Rio Grande do Norte",
+            "RG-Rio Grande do Sul","RO-Rondônia","RR-Roraima",
+            "SC-Santa Catarina","SP-São Paulo","SE-Sergipe","TO-Tocantins"};
 
 
     public static void main(String[] args) {
@@ -172,8 +224,7 @@ public class CadastraCliente extends JApplet {
                                     }
                                     {
                                             ComboBoxModel jComboBox1Model = 
-                                                    new DefaultComboBoxModel(
-                                                                    new String[] { "SIM", "NÃO" });
+                                                    new DefaultComboBoxModel(despacho);                                                                    
                                             jComboBox1 = new JComboBox();
                                             jPanel1.add(jComboBox1);
                                             jComboBox1.setModel(jComboBox1Model);
@@ -243,14 +294,8 @@ public class CadastraCliente extends JApplet {
                                             jLabel12.setHorizontalAlignment(SwingConstants.RIGHT);
                                     }
                                     {
-                                            ComboBoxModel jComboBox2Model = new DefaultComboBoxModel(
-                                                            new String[] {"","AC-Acre","AL-Alagoas","AP-Amapá","AM-Amazonas","BA-Bahia",
-                                                                            "CE-Ceará","ES-Espírito Santo","GO-Goiás","MA-Maranhão",
-                                                                            "MT-Mato Grosso","MS-Mato Grosso do Sul","MG-Minas Gerais",
-                                                                            "PA-Pará","PB-Paraíba","PR-Paraná","PE-Pernambuco","PI-Piauí",
-                                                                            "RJ-Rio de Janeiro","RN-Rio Grande do Norte",
-                                                                            "RG-Rio Grande do Sul","RO-Rondônia","RR-Roraima",
-                                                                            "SC-Santa Catarina","SP-São Paulo","SE-Sergipe","TO-Tocantins"});
+                                            ComboBoxModel jComboBox2Model = new DefaultComboBoxModel(estados);
+                                                            
                                             jComboBox2 = new JComboBox();
                                             jPanel2.add(jComboBox2);
                                             jComboBox2.setModel(jComboBox2Model);
@@ -443,53 +488,9 @@ public class CadastraCliente extends JApplet {
                                     }
                                     {
                                             ComboBoxModel jComboBox3Model = 
-                                                    new DefaultComboBoxModel(
-                                                                    new String[] { "",
-                                                                                    "BANCO ABN AMRO REAL S.A - 356",
-                                                                                    "BANCO BANERJ S.A - 029",
-                                                                                    "BANCO BANESTADO S.A - 038",
-                                                                                    "BANCO BEG S.A - 031",
-                                                                                    "BANCO BMC S.A - 394",
-                                                                                    "BANCO BMG S.A - 318",
-                                                                                    "BANCO BRADESCO S.A - 237",
-                                                                                    "BANCO CACIQUE S.A - 263",
-                                                                                    "BANCO CITIBANK S.A - 745",
-                                                                                    "BANCO COMERCIAL E DE INVESTIMENTO SUDAMERIS S.A - 215",
-                                                                                    "BANCO COOPERATIVO DO BRASIL S.A - 756",
-                                                                                    "BANCO COOPERATIVO SICREDI S.A - 748",
-                                                                                    "BANCO CRUZEIRO DO SUL S.A - 229",
-                                                                                    "BANCO DA AMAZÔNIA S.A - 003",
-                                                                                    "BANCO DE PERNAMBUCO S.A - 024",
-                                                                                    "BANCO DO BRASIL S.A - 001",
-                                                                                    "BANCO DO ESTADO DE SANTA CATARINA S.A - 027",
-                                                                                    "BANCO DO ESTADO DE SÃO PAULO S.A - 033",
-                                                                                    "BANCO DO ESTADO DE SERGIPE S.A - 047",
-                                                                                    "BANCO DO ESTADO DO PARÁ S.A - 037",
-                                                                                    "BANCO DO ESTADO DO PIAUÍ S.A - 039",
-                                                                                    "BANCO DO ESTADO DO RIO GRANDE DO SUL S.A - 041",
-                                                                                    "BANCO DO NORDESTE DO BRASIL S.A - 004",
-                                                                                    "BANCO FINASA S.A - 175",
-                                                                                    "BANCO FININVEST S.A - 252",
-                                                                                    "BANCO IBI S.A - 063",
-                                                                                    "BANCO ITAÚ S.A - 341",
-                                                                                    "BANCO MERCANTIL DE SÃO PAULO S.A - 392",
-                                                                                    "BANCO MERCANTIL DO BRASIL S.A - 389",
-                                                                                    "BANCO NOSSA CAIXA S.A - 151",
-                                                                                    "BANCO PANAMERICANO S.A - 623",
-                                                                                    "BANCO RURAL S.A - 453",
-                                                                                    "BANCO SAFRA S.A",
-                                                                                    "BANCO SANTANDER BRASIL S.A - 353",
-                                                                                    "BANCO SANTANDER MERIDIONAL S.A - 008",
-                                                                                    "BANCO SANTANDER S.A - 351",
-                                                                                    "BANCO SUDAMERIS BRASIL S.A - 347",
-                                                                                    "BANCO DO ESTADO DO ESPÍRITO SANTO S.A - 021",
-                                                                                    "BANKBOSTON BANCO MÚLTIPLO S.A - 479",
-                                                                                    "BANCO DE BRASÍLIA S.A - 070",
-                                                                                    "CAIXA ECONÔMICA FEDERAL - 104",
-                                                                                    "HSBC BANK BRASIL S.A - 399",
-                                                                                    "PARANÁ BANCO S.A - 254",
-                                                                                    "UNIBANCO - UNIÃO DE BANCOS BRASILEIROS S.A - 499",
-                                                                                    "UNICARD BANCO MÚLTIPLO S.A - 230"});
+                                                    new DefaultComboBoxModel(bancos);
+                                            
+                                                                    
                                             jComboBox3 = new JComboBox();
                                             jPanel4.add(jComboBox3);
                                             jComboBox3.setModel(jComboBox3Model);
