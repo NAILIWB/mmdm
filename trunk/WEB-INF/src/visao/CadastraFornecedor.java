@@ -115,15 +115,13 @@ public class CadastraFornecedor extends JApplet {
 	                                            jLabel1 = new JLabel();
 	                                            jPanel1.add(jLabel1);
 	                                            jLabel1.setText("Razão Social");
-	                                            jLabel1.setBounds(17, 5, 64, 23);
+	                                            jLabel1.setBounds(17, 5, 113, 23);
 	                                    }
 	                                    {
 	                                            jLabel2 = new JLabel();
 	                                            jPanel1.add(jLabel2);
-	                                            jLabel2.setText("CPF/CNPJ");
-	                                            jLabel2.setBounds(17, 34, 64, 25);
-	                                            jLabel2.setSize(64, 23);
-	                                            jLabel2.setToolTipText("Cadastro de Pessoa Física");
+	                                            jLabel2.setText("CNPJ/CPF");
+	                                            jLabel2.setBounds(17, 34, 113, 23);
 	                                    }
 	                                    {
 	                                            jTextField1 = new JTextField();

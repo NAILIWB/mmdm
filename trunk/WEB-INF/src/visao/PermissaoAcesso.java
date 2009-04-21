@@ -71,6 +71,13 @@ public class PermissaoAcesso extends JApplet {
     private JComboBox jComboBox5;
     private JLabel jLabel5;
     private String cabecalho[]={"ID PERMISSÃO","PERMISSÃ0","ATIVO"};
+    private String permissao[]={"","CADASTRAR","CONSULTAR","ALTERAR","RELATÓRIO"};
+    private String modulos[]= {"","CLIENTE","DESPACHO","DEVOLUÇÃO MATERIAL",
+			"ESTOQUE","FORNECEDOR","ORDEM SERVIÇO","PERFIL ACESSO",
+			"PERMISSÃO ACESSO","REQUISIÇÃO MATERIAL",
+			"STATUS ORDEM SERVIÇO","STATUS REQUISIÇÃO MATERIAL",
+			"VENDA"};
+    private String ativo[]={"","SIM","NÃO"};
 	private JButton jButton3;
 
 
@@ -146,8 +153,7 @@ public void init() {
                                                     }
                                                     {
                                                     	ComboBoxModel jComboBox2Model = 
-                                                    		new DefaultComboBoxModel(
-                                                    				new String[] {"","CADASTRAR","CONSULTAR","ALTERAR","RELATÓRIO"});
+                                                    		new DefaultComboBoxModel(permissao);
                                                     	jComboBox2 = new JComboBox();
                                                     	jPanel3.add(jComboBox2);
                                                     	jComboBox2.setModel(jComboBox2Model);
@@ -161,12 +167,7 @@ public void init() {
                                                     }
                                                     {
                                                     	ComboBoxModel jComboBox3Model = 
-                                                    		new DefaultComboBoxModel(
-                                                    				new String[] {"","CLIENTE","DESPACHO","DEVOLUÇÃO MATERIAL",
-                                                    						"ESTOQUE","FORNECEDOR","ORDEM SERVIÇO","PERFIL ACESSO",
-                                                    						"PERMISSÃO ACESSO","REQUISIÇÃO MATERIAL",
-                                                    						"STATUS ORDEM SERVIÇO","STATUS REQUISIÇÃO MATERIAL",
-                                                    						"VENDA"});
+                                                    		new DefaultComboBoxModel(modulos);
                                                     	jComboBox3 = new JComboBox();
                                                     	jPanel3.add(jComboBox3);
                                                     	jComboBox3.setModel(jComboBox3Model);
@@ -180,8 +181,7 @@ public void init() {
                                                     }
                                                     {
                                                     	ComboBoxModel jComboBox4Model = 
-                                                    		new DefaultComboBoxModel(
-                                                    				new String[] {"","SIM","NÃO"});
+                                                    		new DefaultComboBoxModel(ativo);
                                                     	jComboBox4 = new JComboBox();
                                                     	jPanel3.add(jComboBox4);
                                                     	jComboBox4.setModel(jComboBox4Model);
@@ -293,8 +293,7 @@ public void init() {
                                     		}
                                     		{
                                     			ComboBoxModel jComboBox2Model = 
-                                            		new DefaultComboBoxModel(
-                                            				new String[] {"","CADASTRAR","CONSULTAR","ALTERAR","RELATÓRIO"});
+                                            		new DefaultComboBoxModel(permissao);
                                     			jComboBox6 = new JComboBox();
                                     			jPanel8.add(jComboBox6);
                                     			jComboBox6.setModel(jComboBox2Model);
@@ -309,12 +308,8 @@ public void init() {
                                     		}
                                     		{
                                     			ComboBoxModel jComboBox3Model = 
-                                            		new DefaultComboBoxModel(
-                                            				new String[] {"","CLIENTE","DESPACHO","DEVOLUÇÃO MATERIAL",
-                                            						"ESTOQUE","FORNECEDOR","ORDEM SERVIÇO","PERFIL ACESSO",
-                                            						"PERMISSÃO ACESSO","REQUISIÇÃO MATERIAL",
-                                            						"STATUS ORDEM SERVIÇO","STATUS REQUISIÇÃO MATERIAL",
-                                            						"VENDA"});                                    			
+                                            		new DefaultComboBoxModel(modulos);
+                                            			                               			
                                     			jComboBox7 = new JComboBox();
                                     			jPanel8.add(jComboBox7);
                                     			jComboBox7.setModel(jComboBox3Model);
@@ -329,8 +324,7 @@ public void init() {
                                     		}
                                     		{
                                     			ComboBoxModel jComboBox4Model = 
-                                            		new DefaultComboBoxModel(
-                                            				new String[] {"","SIM","NÃO"});
+                                            		new DefaultComboBoxModel(ativo);                                            				
                                     			jComboBox8 = new JComboBox();
                                     			jPanel8.add(jComboBox8);
                                     			jComboBox8.setModel(jComboBox4Model);
