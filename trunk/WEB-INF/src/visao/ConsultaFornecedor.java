@@ -28,7 +28,6 @@ public class ConsultaFornecedor extends JApplet {
 	private JPanel jPanel1;
 	private JComboBox jComboBox2;
 	private JComboBox jComboBox1;
-	private JRadioButton jRadioButton3;
 	private ButtonGroup buttonGroup1;
 	private JRadioButton jRadioButton2;
 	private JRadioButton jRadioButton1;
@@ -66,36 +65,27 @@ public class ConsultaFornecedor extends JApplet {
 				getContentPane().add(jPanel1);
 				getContentPane().add(getJTabbedPane1());
 				jPanel1.setLayout(jPanel1Layout);
-				jPanel1.setBounds(12, 12, 460, 98);
+				jPanel1.setBounds(12, 12, 460, 84);
 				jPanel1.setBorder(BorderFactory.createTitledBorder(""));
 				{
 					jPanel2 = new JPanel();
-					GridLayout jPanel2Layout = new GridLayout(3, 1);
-					jPanel2Layout.setHgap(5);
-					jPanel2Layout.setVgap(5);
-					jPanel2Layout.setColumns(1);
-					jPanel2Layout.setRows(3);
 					jPanel1.add(jPanel2);
-					jPanel2.setLayout(jPanel2Layout);
+					jPanel2.setLayout(null);
 					jPanel2.setBorder(BorderFactory.createTitledBorder("Tipo da Consulta"));
 					jPanel2.setToolTipText("Selecione o tipo de consulta.");
 					{
 						jRadioButton1 = new JRadioButton();
 						jPanel2.add(jRadioButton1);
 						jRadioButton1.setText("CNPJ/CPF");
+						jRadioButton1.setBounds(5, 19, 212, 19);
 						getButtonGroup1().add(jRadioButton1);
 					}
 					{
 						jRadioButton2 = new JRadioButton();
 						jPanel2.add(jRadioButton2);
 						jRadioButton2.setText("Razão Social");
+						jRadioButton2.setBounds(5, 39, 211, 21);
 						getButtonGroup1().add(jRadioButton2);
-					}
-					{
-						jRadioButton3 = new JRadioButton();
-						jPanel2.add(jRadioButton3);
-						jRadioButton3.setText("Todos Fornecedores");
-						getButtonGroup1().add(jRadioButton3);
 					}
 				}
 				{
