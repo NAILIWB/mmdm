@@ -2,12 +2,17 @@ package visao;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JApplet;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 
@@ -26,6 +31,37 @@ import javax.swing.border.SoftBevelBorder;
 @SuppressWarnings("serial")
 public class ConsultaFornecedor extends JApplet {
 	private JPanel jPanel1;
+	private JLabel jLabel2;
+	private JLabel jLabel3;
+	private JLabel jLabel4;
+	private JLabel jLabel5;
+	private JLabel jLabel7;
+	private JTextField jTextField6;
+	private JButton jButton1;
+	private JTextField jTextField15;
+	private JLabel jLabel15;
+	private JTextField jTextField14;
+	private JLabel jLabel14;
+	private JTextField jTextField13;
+	private JLabel jLabel13;
+	private JTextField jTextField12;
+	private JLabel jLabel12;
+	private JTextField jTextField11;
+	private JLabel jLabel11;
+	private JTextField jTextField10;
+	private JLabel jLabel10;
+	private JTextField jTextField9;
+	private JLabel jLabel9;
+	private JTextField jTextField8;
+	private JLabel jLabel8;
+	private JTextField jTextField7;
+	private JLabel jLabel6;
+	private JTextField jTextField5;
+	private JTextField jTextField4;
+	private JTextField jTextField3;
+	private JTextField jTextField2;
+	private JLabel jLabel1;
+	private JTextField jTextField1;
 	private JComboBox jComboBox2;
 	private JComboBox jComboBox1;
 	private ButtonGroup buttonGroup1;
@@ -36,7 +72,6 @@ public class ConsultaFornecedor extends JApplet {
 	private JPanel jPanel7;
 	private JPanel jPanel6;
 	private JPanel jPanel5;
-	private JPanel jPanel4;
 	private JTabbedPane jTabbedPane1;
 	
 	public static void main(String[] args) {
@@ -53,9 +88,9 @@ public class ConsultaFornecedor extends JApplet {
 		
 	public void init() {
 		try{
-			this.setSize(600,400);
+			this.setSize(485, 450);
 			getContentPane().setLayout(null);
-			this.setEnabled(false);
+			
 			{
 				jPanel1 = new JPanel();
 				GridLayout jPanel1Layout = new GridLayout(1, 2);
@@ -64,8 +99,16 @@ public class ConsultaFornecedor extends JApplet {
 				jPanel1Layout.setColumns(2);
 				getContentPane().add(jPanel1);
 				getContentPane().add(getJTabbedPane1());
+				{
+					jButton1 = new JButton();
+					getContentPane().add(jButton1);
+					jButton1.setText("Consultar");
+					jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Consultas.GIF")));
+					jButton1.setToolTipText("Clique para consultar os dados do Fornecedor.");
+					jButton1.setBounds(187, 413, 118, 26);
+				}
 				jPanel1.setLayout(jPanel1Layout);
-				jPanel1.setBounds(12, 12, 460, 84);
+				jPanel1.setBounds(12, 12, 460, 91);
 				jPanel1.setBorder(BorderFactory.createTitledBorder(""));
 				{
 					jPanel2 = new JPanel();
@@ -132,30 +175,117 @@ public class ConsultaFornecedor extends JApplet {
 	private JTabbedPane getJTabbedPane1() {
 		if(jTabbedPane1 == null) {
 			jTabbedPane1 = new JTabbedPane();
-			jTabbedPane1.setBounds(12, 122, 460, 221);
+			jTabbedPane1.setBounds(12, 122, 460, 276);
 			jTabbedPane1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-			jTabbedPane1.addTab("Fornecedor", null, getJPanel4(), null);
 			jTabbedPane1.addTab("Endereço", null, getJPanel5(), null);
 			jTabbedPane1.addTab("Contatos", null, getJPanel6(), null);
 			jTabbedPane1.addTab("Dados Bancários", null, getJPanel7(), null);
 		}
 		return jTabbedPane1;
 	}
-	
-	private JPanel getJPanel4() {
-		if(jPanel4 == null) {
-			jPanel4 = new JPanel();
-			jPanel4.setLayout(null);
-			jPanel4.setBorder(BorderFactory.createTitledBorder(""));
-		}
-		return jPanel4;
-	}
-	
+
 	private JPanel getJPanel5() {
 		if(jPanel5 == null) {
 			jPanel5 = new JPanel();
-			jPanel5.setLayout(null);
+			GridLayout jPanel5Layout = new GridLayout(8, 2);
+			jPanel5Layout.setColumns(2);
+			jPanel5Layout.setHgap(5);
+			jPanel5Layout.setVgap(5);
+			jPanel5Layout.setRows(8);
+			jPanel5.setLayout(jPanel5Layout);
 			jPanel5.setBorder(BorderFactory.createTitledBorder(""));
+			{
+				jLabel1 = new JLabel();
+				jPanel5.add(jLabel1);
+				jLabel1.setText("Logradouro");
+			}
+			{
+				jTextField1 = new JTextField();
+				jPanel5.add(jTextField1);
+				jTextField1.setEditable(false);
+				jTextField1.setColumns(100);
+				jTextField1.setSize(217, 24);
+			}
+			{
+				jLabel2 = new JLabel();
+				jPanel5.add(jLabel2);
+				jLabel2.setText("Número");
+			}
+			{
+				jTextField2 = new JTextField();
+				jPanel5.add(jTextField2);
+				jTextField2.setEditable(false);
+				jTextField2.setColumns(5);
+				jTextField2.setHorizontalAlignment(SwingConstants.CENTER);
+			}
+			{
+				jLabel8 = new JLabel();
+				jPanel5.add(jLabel8);
+				jLabel8.setText("C.E.P.");
+			}
+			{
+				jTextField8 = new JTextField();
+				jPanel5.add(jTextField8);
+				jTextField8.setEditable(false);
+				jTextField8.setColumns(15);
+				jTextField8.setHorizontalAlignment(SwingConstants.CENTER);
+			}
+			{
+				jLabel3 = new JLabel();
+				jPanel5.add(jLabel3);
+				jLabel3.setText("Complemento");
+			}
+			
+			{
+				jTextField3 = new JTextField();
+				jPanel5.add(jTextField3);
+				jTextField3.setEditable(false);
+				jTextField3.setColumns(50);
+			}
+			{
+				jLabel4 = new JLabel();
+				jPanel5.add(jLabel4);
+				jLabel4.setText("Bairro");
+			}
+			{
+				jTextField4 = new JTextField();
+				jPanel5.add(jTextField4);
+				jTextField4.setEditable(false);
+				jTextField4.setColumns(50);
+			}
+			{
+				jLabel5 = new JLabel();
+				jPanel5.add(jLabel5);
+				jLabel5.setText("Cidade");
+			}
+			{
+				jTextField5 = new JTextField();
+				jPanel5.add(jTextField5);
+				jTextField5.setEditable(false);
+				jTextField5.setColumns(50);
+			}
+			{
+				jLabel6 = new JLabel();
+				jPanel5.add(jLabel6);
+				jLabel6.setText("Unidade Federativa");
+			}
+			{
+				jTextField6 = new JTextField();
+				jPanel5.add(jTextField6);
+				jTextField6.setEditable(false);
+				jTextField6.setColumns(20);
+			}
+			{
+				jLabel7 = new JLabel();
+				jPanel5.add(jLabel7);
+				jLabel7.setText("País");
+			}
+			{
+				jTextField7 = new JTextField();
+				jPanel5.add(jTextField7);
+				jTextField7.setEditable(false);
+				jTextField7.setColumns(50);
+			}
 		}
 		return jPanel5;
 	}
@@ -165,6 +295,70 @@ public class ConsultaFornecedor extends JApplet {
 			jPanel6 = new JPanel();
 			jPanel6.setLayout(null);
 			jPanel6.setBorder(BorderFactory.createTitledBorder(""));
+			{
+				jLabel9 = new JLabel();
+				jPanel6.add(jLabel9);
+				jLabel9.setText("Telefone Fixo");
+				jLabel9.setBounds(5, 5, 217, 42);
+				jLabel9.setSize(217, 24);
+			}
+			{
+				jTextField9 = new JTextField();
+				jPanel6.add(jTextField9);
+				jTextField9.setEditable(false);
+				jTextField9.setColumns(20);
+				jTextField9.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField9.setBounds(227, 5, 217, 42);
+				jTextField9.setSize(217, 24);
+			}
+			{
+				jLabel10 = new JLabel();
+				jPanel6.add(jLabel10);
+				jLabel10.setText("Telefone Celular");
+				jLabel10.setBounds(5, 52, 217, 42);
+				jLabel10.setSize(217, 24);
+			}
+			{
+				jTextField10 = new JTextField();
+				jPanel6.add(jTextField10);
+				jTextField10.setEditable(false);
+				jTextField10.setColumns(20);
+				jTextField10.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField10.setBounds(227, 52, 217, 42);
+				jTextField10.setSize(217, 24);
+			}
+			{
+				jLabel11 = new JLabel();
+				jPanel6.add(jLabel11);
+				jLabel11.setText("Email");
+				jLabel11.setBounds(5, 99, 217, 42);
+				jLabel11.setSize(217, 24);
+			}
+			{
+				jTextField11 = new JTextField();
+				jPanel6.add(jTextField11);
+				jTextField11.setEditable(false);
+				jTextField11.setColumns(20);
+				jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField11.setBounds(227, 99, 217, 42);
+				jTextField11.setSize(217, 24);
+			}
+			{
+				jLabel12 = new JLabel();
+				jPanel6.add(jLabel12);
+				jLabel12.setText("Messenger");
+				jLabel12.setBounds(5, 146, 217, 42);
+				jLabel12.setSize(217, 24);
+			}
+			{
+				jTextField12 = new JTextField();
+				jPanel6.add(jTextField12);
+				jTextField12.setEditable(false);
+				jTextField12.setColumns(20);
+				jTextField12.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField12.setBounds(227, 146, 217, 42);
+				jTextField12.setSize(217, 24);
+			}
 		}
 		return jPanel6;
 	}
@@ -174,6 +368,54 @@ public class ConsultaFornecedor extends JApplet {
 			jPanel7 = new JPanel();
 			jPanel7.setLayout(null);
 			jPanel7.setBorder(BorderFactory.createTitledBorder(""));
+			{
+				jLabel13 = new JLabel();
+				jPanel7.add(jLabel13);
+				jLabel13.setText("Banco");
+				jLabel13.setBounds(5, 5, 217, 74);
+				jLabel13.setSize(217, 24);
+			}
+			{
+				jTextField13 = new JTextField();
+				jPanel7.add(jTextField13);
+				jTextField13.setEditable(false);
+				jTextField13.setColumns(20);
+				jTextField13.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField13.setBounds(227, 5, 217, 74);
+				jTextField13.setSize(217, 24);
+			}
+			{
+				jLabel14 = new JLabel();
+				jPanel7.add(jLabel14);
+				jLabel14.setText("Agência");
+				jLabel14.setBounds(5, 84, 217, 74);
+				jLabel14.setSize(217, 24);
+			}
+			{
+				jTextField14 = new JTextField();
+				jPanel7.add(jTextField14);
+				jTextField14.setEditable(false);
+				jTextField14.setColumns(20);
+				jTextField14.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField14.setBounds(227, 84, 217, 74);
+				jTextField14.setSize(217, 24);
+			}
+			{
+				jLabel15 = new JLabel();
+				jPanel7.add(jLabel15);
+				jLabel15.setText("Conta Corrente");
+				jLabel15.setBounds(5, 163, 217, 74);
+				jLabel15.setSize(217, 24);
+			}
+			{
+				jTextField15 = new JTextField();
+				jPanel7.add(jTextField15);
+				jTextField15.setEditable(false);
+				jTextField15.setColumns(20);
+				jTextField15.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField15.setBounds(227, 163, 217, 74);
+				jTextField15.setSize(217, 24);
+			}
 		}
 		return jPanel7;
 	}
