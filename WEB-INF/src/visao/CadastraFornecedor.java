@@ -309,7 +309,7 @@ public class CadastraFornecedor extends JApplet {
 	                                    {
 	                                            jLabel17 = new JLabel();
 	                                            jPanel3.add(jLabel17);
-	                                            jLabel17.setText("Chat ");
+	                                            jLabel17.setText("Messenger");
 	                                            jLabel17.setBounds(248, 53, 56, 26);
 	                                            jLabel17.setHorizontalAlignment(SwingConstants.RIGHT);
 	                                    }
@@ -352,7 +352,7 @@ public class CadastraFornecedor extends JApplet {
 	                                            jTextField10 = new JTextField();
 	                                            jPanel3.add(jTextField10);
 	                                            jTextField10.setBounds(313, 55, 135, 24);
-	                                            jTextField10.setToolTipText("Informe o email do chat preferido.(MSN, Gtalk, Yahoo, etc)");
+	                                            jTextField10.setToolTipText("Informe o email do comunicador preferido.(MSN, Gtalk, Yahoo, etc)");
 	                                            jTextField10.setHorizontalAlignment(SwingConstants.CENTER);
 	                                            jTextField10.setColumns(20);
 	                                            jTextField10.setSize(135, 23);
