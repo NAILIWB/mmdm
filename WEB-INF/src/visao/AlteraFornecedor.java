@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,7 +30,7 @@ import javax.swing.border.SoftBevelBorder;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 @SuppressWarnings("serial")
-public class ConsultaFornecedor extends JApplet {
+public class AlteraFornecedor extends JApplet {
 	private JPanel jPanel1;
 	private JLabel jLabel2;
 	private JLabel jLabel3;
@@ -37,6 +38,11 @@ public class ConsultaFornecedor extends JApplet {
 	private JLabel jLabel5;
 	private JLabel jLabel7;
 	private JTextField jTextField6;
+	private JFormattedTextField jFormattedTextField1;
+	private JLabel jLabel17;
+	private JTextField jTextField16;
+	private JLabel jLabel16;
+	private JPanel jPanel4;
 	private JButton jButton1;
 	private JTextField jTextField15;
 	private JLabel jLabel15;
@@ -78,11 +84,11 @@ public class ConsultaFornecedor extends JApplet {
 		
 				JFrame frame = new JFrame();
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				ConsultaFornecedor consultaFornecedor = new ConsultaFornecedor();
-				consultaFornecedor.init();
-				consultaFornecedor.start();				
-				frame.getContentPane().add(consultaFornecedor);
-				frame.setPreferredSize(consultaFornecedor.getSize());
+				AlteraFornecedor alteraFornecedor = new AlteraFornecedor();
+				alteraFornecedor.init();
+				alteraFornecedor.start();				
+				frame.getContentPane().add(alteraFornecedor);
+				frame.setPreferredSize(alteraFornecedor.getSize());
 				frame.setVisible(true);
 			}
 		
@@ -102,9 +108,9 @@ public class ConsultaFornecedor extends JApplet {
 				{
 					jButton1 = new JButton();
 					getContentPane().add(jButton1);
-					jButton1.setText("Consultar");
+					jButton1.setText("Alterar");
 					jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Consultas.GIF")));
-					jButton1.setToolTipText("Clique para consultar os dados do Fornecedor.");
+					jButton1.setToolTipText("Clique para alterar os dados do Fornecedor.");
 					jButton1.setBounds(187, 413, 118, 26);
 				}
 				jPanel1.setLayout(jPanel1Layout);
@@ -177,6 +183,45 @@ public class ConsultaFornecedor extends JApplet {
 			jTabbedPane1 = new JTabbedPane();
 			jTabbedPane1.setBounds(12, 122, 460, 276);
 			jTabbedPane1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+			{
+				jPanel4 = new JPanel();
+				jTabbedPane1.addTab("Fornecedor", null, jPanel4, null);
+				jPanel4.setLayout(null);
+				jPanel4.setBorder(BorderFactory.createTitledBorder(""));
+				{
+					jLabel16 = new JLabel();
+					jPanel4.add(jLabel16);
+					jLabel16.setText("Razão Social");
+					jLabel16.setBounds(5, 5, 217, 114);
+					jLabel16.setSize(217, 24);
+				}
+				{
+					jTextField16 = new JTextField();
+					jPanel4.add(jTextField16);
+					jTextField16.setBounds(227, 5, 217, 114);
+					jTextField16.setSize(217, 24);
+					jTextField16.setToolTipText("Informe a razão social do fornecedor.");
+					jTextField16.setEditable(false);
+					jTextField16.setColumns(100);
+				}
+				{
+					jLabel17 = new JLabel();
+					jPanel4.add(jLabel17);
+					jLabel17.setText("C.N.P.J./C.P.F.");
+					jLabel17.setBounds(5, 124, 217, 114);
+					jLabel17.setSize(217, 24);
+				}
+				{
+					jFormattedTextField1 = new JFormattedTextField();
+					jPanel4.add(jFormattedTextField1);
+					jFormattedTextField1.setBounds(227, 124, 217, 114);
+					jFormattedTextField1.setSize(217, 24);
+					jFormattedTextField1.setToolTipText("Informe o CNPJ ou CPF do fornecedor.");
+					jFormattedTextField1.setEditable(false);
+					jFormattedTextField1.setHorizontalAlignment(SwingConstants.CENTER);
+					jFormattedTextField1.setColumns(14);
+				}
+			}
 			jTabbedPane1.addTab("Endereço", null, getJPanel5(), null);
 			jTabbedPane1.addTab("Contatos", null, getJPanel6(), null);
 			jTabbedPane1.addTab("Dados Bancários", null, getJPanel7(), null);
@@ -202,9 +247,10 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField1 = new JTextField();
 				jPanel5.add(jTextField1);
+				jTextField1.setEditable(false);
 				jTextField1.setColumns(100);
 				jTextField1.setSize(217, 24);
-				jTextField1.setEditable(false);
+				jTextField1.setToolTipText("Informe o logradouro(Avenida, Rua, Praça, etc) do endereço.");
 			}
 			{
 				jLabel2 = new JLabel();
@@ -214,9 +260,11 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField2 = new JTextField();
 				jPanel5.add(jTextField2);
+				jTextField2.setEditable(false);
 				jTextField2.setColumns(5);
 				jTextField2.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField2.setEditable(false);
+				jTextField2.setToolTipText("Informe o número do imóvel.Se não tiver, informe zeros.");
+				jTextField2.setText("00000");
 			}
 			{
 				jLabel8 = new JLabel();
@@ -226,9 +274,10 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField8 = new JTextField();
 				jPanel5.add(jTextField8);
+				jTextField8.setEditable(false);
 				jTextField8.setColumns(15);
 				jTextField8.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField8.setEditable(false);
+				jTextField8.setToolTipText("Informe o CEP do logradouro.");
 			}
 			{
 				jLabel3 = new JLabel();
@@ -239,8 +288,9 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField3 = new JTextField();
 				jPanel5.add(jTextField3);
-				jTextField3.setColumns(50);
 				jTextField3.setEditable(false);
+				jTextField3.setColumns(50);
+				jTextField3.setToolTipText("Informe todos os dados complementares referentes ao logradouro(Quadra, Lote, etc).");
 			}
 			{
 				jLabel4 = new JLabel();
@@ -250,8 +300,8 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField4 = new JTextField();
 				jPanel5.add(jTextField4);
-				jTextField4.setColumns(50);
 				jTextField4.setEditable(false);
+				jTextField4.setColumns(50);
 			}
 			{
 				jLabel5 = new JLabel();
@@ -261,8 +311,8 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField5 = new JTextField();
 				jPanel5.add(jTextField5);
-				jTextField5.setColumns(50);
 				jTextField5.setEditable(false);
+				jTextField5.setColumns(50);
 			}
 			{
 				jLabel6 = new JLabel();
@@ -272,8 +322,8 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField6 = new JTextField();
 				jPanel5.add(jTextField6);
-				jTextField6.setColumns(20);
 				jTextField6.setEditable(false);
+				jTextField6.setColumns(20);
 			}
 			{
 				jLabel7 = new JLabel();
@@ -283,8 +333,8 @@ public class ConsultaFornecedor extends JApplet {
 			{
 				jTextField7 = new JTextField();
 				jPanel5.add(jTextField7);
-				jTextField7.setColumns(50);
 				jTextField7.setEditable(false);
+				jTextField7.setColumns(50);
 			}
 		}
 		return jPanel5;
@@ -383,6 +433,7 @@ public class ConsultaFornecedor extends JApplet {
 				jTextField13.setHorizontalAlignment(SwingConstants.CENTER);
 				jTextField13.setBounds(227, 5, 217, 74);
 				jTextField13.setSize(217, 24);
+				
 			}
 			{
 				jLabel14 = new JLabel();
