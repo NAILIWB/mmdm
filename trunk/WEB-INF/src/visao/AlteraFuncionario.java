@@ -33,7 +33,7 @@ import javax.swing.border.SoftBevelBorder;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 @SuppressWarnings("serial")
-public class CadastraFuncionario extends JApplet {
+public class AlteraFuncionario extends JApplet {
 	
 	 private JTabbedPane jTabbedPane1;
 	    private JPanel jPanel1;
@@ -93,24 +93,24 @@ public class CadastraFuncionario extends JApplet {
 
 	    public static void main(String[] args) {
 	            
-	                            JFrame frame = new JFrame(" CADASTRA FUNCIONÁRIO");
+	                            JFrame frame = new JFrame(" ALTERA FUNCIONÁRIO");
 	                            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	                            CadastraFuncionario cadastraFuncionario = new CadastraFuncionario();
-	                            cadastraFuncionario.init();
-	                            cadastraFuncionario.start();
-	                            frame.getContentPane().add(cadastraFuncionario);
-	                            frame.setPreferredSize(cadastraFuncionario.getSize());
+	                            AlteraFuncionario alteraFuncionario = new AlteraFuncionario();
+	                            alteraFuncionario.init();
+	                            alteraFuncionario.start();
+	                            frame.getContentPane().add(alteraFuncionario);
+	                            frame.setPreferredSize(alteraFuncionario.getSize());
 	                            frame.setVisible(true);
 	                    }
 	            
 	    public void init() {
 	            try {
-	                    this.setSize(500,320);
+	                    this.setSize(500,500);
 	                    getContentPane().setLayout(null);
 	                    {
 	                            jTabbedPane1 = new JTabbedPane();
 	                            getContentPane().add(jTabbedPane1);
-	                            jTabbedPane1.setBounds(12, 12, 476, 235);
+	                            jTabbedPane1.setBounds(12, 185, 473, 235);
 	                            jTabbedPane1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 	                            {
 	                                    jPanel1 = new JPanel();
@@ -126,18 +126,43 @@ public class CadastraFuncionario extends JApplet {
 	                                            jLabel1.setBounds(17, 5, 64, 23);
 	                                    }
 	                                    {
+	                                    	jTextField1 = new JTextField();
+	                                    	jPanel1.add(jTextField1);
+	                                    	jTextField1.setToolTipText("Informe o nome do funcionário.");
+	                                    	jTextField1.setBounds(148, 5, 300, 23);
+	                                    	jTextField1.setColumns(100);
+	                                    }
+	                                    {
+	                                    	jLabel2 = new JLabel();
+	                                    	jPanel1.add(jLabel2);
+	                                    	jLabel2.setText("C.P.F.");
+	                                    	jLabel2.setBounds(17, 34, 64, 25);
+	                                    	jLabel2.setSize(64, 23);
+	                                    	jLabel2.setToolTipText("Cadastro de Pessoa Física");
+	                                    }
+	                                    {
+	                                    	jFormattedTextField1 = new JFormattedTextField();
+	                                    	jPanel1.add(jFormattedTextField1);
+	                                    	jFormattedTextField1.setBounds(148, 34, 122, 24);
+	                                    	jFormattedTextField1.setToolTipText("Informe somente os números do CPF. ");
+	                                    	jFormattedTextField1.setHorizontalAlignment(SwingConstants.CENTER);
+	                                    	jFormattedTextField1.setColumns(14);
+	                                    	jFormattedTextField1.setSize(125, 23);
+	                                    }
+	                                    {
 	                                            jLabel3 = new JLabel();
 	                                            jPanel1.add(jLabel3);
 	                                            jLabel3.setText("Identidade");
 	                                            jLabel3.setBounds(16, 63, 65, 27);
 	                                    }
 	                                    {
-	                                            jLabel2 = new JLabel();
-	                                            jPanel1.add(jLabel2);
-	                                            jLabel2.setText("C.P.F.");
-	                                            jLabel2.setBounds(17, 34, 64, 25);
-	                                            jLabel2.setSize(64, 23);
-	                                            jLabel2.setToolTipText("Cadastro de Pessoa Física");
+	                                    	jTextField3 = new JTextField();
+	                                    	jPanel1.add(jTextField3);
+	                                    	jTextField3.setToolTipText("Informe o número de identificação do documento de identidade.");
+	                                    	jTextField3.setBounds(148, 64, 122, 29);
+	                                    	jTextField3.setColumns(50);
+	                                    	jTextField3.setSize(125, 23);
+	                                    	jTextField3.setHorizontalAlignment(SwingConstants.CENTER);
 	                                    }
 	                                    {
 	                                            jLabel4 = new JLabel();
@@ -146,59 +171,34 @@ public class CadastraFuncionario extends JApplet {
 	                                            jLabel4.setBounds(17, 96, 64, 22);
 	                                    }
 	                                    {
+	                                    	jTextField11 = new JTextField();
+	                                    	jPanel1.add(jTextField11);
+	                                    	jTextField11.setBounds(148, 96, 127, 24);
+	                                    	jTextField11.setToolTipText("Informe o número de  identificação do documento da carteira de trabalho.");
+	                                    	jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
+	                                    	jTextField11.setSize(125, 23);
+	                                    	jTextField11.setColumns(20);
+	                                    }
+	                                    {
 	                                            jLabel24 = new JLabel();
 	                                            jPanel1.add(jLabel24);
 	                                            jLabel24.setText("Plano de Saúde");
 	                                            jLabel24.setBounds(17, 130, 113, 23);
 	                                    }
 	                                    {
+	                                    	jTextField15 = new JTextField();
+	                                    	jPanel1.add(jTextField15);
+	                                    	jTextField15.setBounds(148, 130, 123, 25);
+	                                    	jTextField15.setToolTipText("Informe o número de identificação do Plano de Saúde.");
+	                                    	jTextField15.setHorizontalAlignment(SwingConstants.CENTER);
+	                                    	jTextField15.setSize(125, 23);
+	                                    	jTextField15.setColumns(50);
+	                                    }
+	                                    {
 	                                            jLabel21 = new JLabel();
 	                                            jPanel1.add(jLabel21);
 	                                            jLabel21.setText("Perfil");
 	                                            jLabel21.setBounds(17, 165, 64, 23);
-	                                    }
-	                                    {
-	                                            jTextField1 = new JTextField();
-	                                            jPanel1.add(jTextField1);
-	                                            jTextField1.setToolTipText("Informe a denominação jurídica da empresa.");
-	                                            jTextField1.setBounds(148, 5, 300, 23);
-	                                            jTextField1.setColumns(100);
-	                                    }
-	                                    {
-	                                            jFormattedTextField1 = new JFormattedTextField();
-	                                            jPanel1.add(jFormattedTextField1);
-	                                            jFormattedTextField1.setBounds(148, 34, 122, 24);
-	                                            jFormattedTextField1.setToolTipText("Informe os números do CPF. ");
-	                                            jFormattedTextField1.setHorizontalAlignment(SwingConstants.CENTER);
-	                                            jFormattedTextField1.setColumns(14);
-	                                            jFormattedTextField1.setSize(125, 23);
-	                                    }
-	                                    {
-	                                            jTextField3 = new JTextField();
-	                                            jPanel1.add(jTextField3);
-	                                            jTextField3.setToolTipText("Informe a identificação do documento de identidade.");
-	                                            jTextField3.setBounds(148, 64, 122, 29);
-	                                            jTextField3.setColumns(50);
-	                                            jTextField3.setSize(125, 23);
-	                                            jTextField3.setHorizontalAlignment(SwingConstants.CENTER);
-	                                    }
-	                                    {
-	                                            jTextField11 = new JTextField();
-	                                            jPanel1.add(jTextField11);
-	                                            jTextField11.setBounds(148, 96, 127, 24);
-	                                            jTextField11.setToolTipText("Informe a identificação do documento da carteira de trabalho.");
-	                                            jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
-	                                            jTextField11.setSize(125, 23);
-	                                            jTextField11.setColumns(20);
-	                                    }
-	                                    {
-	                                            jTextField15 = new JTextField();
-	                                            jPanel1.add(jTextField15);
-	                                            jTextField15.setBounds(148, 130, 123, 25);
-	                                            jTextField15.setToolTipText("Informe o número do Plano de Saúde.");
-	                                            jTextField15.setHorizontalAlignment(SwingConstants.CENTER);
-	                                            jTextField15.setSize(125, 23);
-	                                            jTextField15.setColumns(50);
 	                                    }
 	                                    {
 	                                            jComboBox1 = new JComboBox();
@@ -536,14 +536,14 @@ public class CadastraFuncionario extends JApplet {
 	                            jPanel6Layout.setColumns(2);
 	                            getContentPane().add(jPanel6);
 	                            jPanel6.setLayout(jPanel6Layout);
-	                            jPanel6.setBounds(119, 259, 251, 42);
+	                            jPanel6.setBounds(131, 446, 251, 42);
 	                            jPanel6.setBorder(BorderFactory.createTitledBorder(""));
 	                            {
 	                                    jButton1 = new JButton();
 	                                    jPanel6.add(jButton1);
-	                                    jButton1.setText("Incluir");
-	                                    jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/07_Incluir.GIF")));
-	                                    jButton1.setToolTipText("Clique para gravar os dados do funcionário.");
+	                                    jButton1.setText("Alterar");
+	                                    jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/TipoVeiculo.GIF")));
+	                                    jButton1.setToolTipText("Clique para alterar os dados do funcionário.");
 	                            }
 	                            {
 	                                    jButton2 = new JButton();
