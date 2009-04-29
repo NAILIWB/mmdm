@@ -93,7 +93,7 @@ public class CadastraFuncionario extends JApplet {
 
 	    public static void main(String[] args) {
 	            
-	                            JFrame frame = new JFrame("DADOS DO FUNCIONÁRIO");
+	                            JFrame frame = new JFrame(" CADASTRA FUNCIONÁRIO");
 	                            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	                            CadastraFuncionario cadastraFuncionario = new CadastraFuncionario();
 	                            cadastraFuncionario.init();

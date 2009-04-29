@@ -2,13 +2,10 @@ package visao;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -32,18 +29,17 @@ import javax.swing.border.SoftBevelBorder;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 @SuppressWarnings("serial")
-public class AlteraFornecedor extends JApplet {
+public class ConsultaFuncionario extends JApplet {
 	private JPanel jPanel1;
 	private JLabel jLabel2;
 	private JLabel jLabel3;
 	private JLabel jLabel4;
 	private JLabel jLabel5;
-	private JLabel jLabel7;
-	private JFormattedTextField jFormattedTextField1;
-	private JLabel jLabel17;
+	private JLabel jLabel7;    
+	private JTextField jTextField6;
 	private JTextField jTextField16;
 	private JLabel jLabel16;
-	private JPanel jPanel4;
+	private JButton jButton1;
 	private JTextField jTextField15;
 	private JLabel jLabel15;
 	private JTextField jTextField14;
@@ -54,21 +50,15 @@ public class AlteraFornecedor extends JApplet {
 	private JLabel jLabel12;
 	private JTextField jTextField11;
 	private JLabel jLabel11;
+	private JTextField jTextField10;
 	private JLabel jLabel10;
+	private JTextField jTextField9;
 	private JLabel jLabel9;
 	private JTextField jTextField8;
 	private JLabel jLabel8;
 	private JTextField jTextField7;
 	private JLabel jLabel6;
 	private JTextField jTextField5;
-	private JButton jButton2;
-	private JButton jButton1;
-	private JPanel jPanel8;
-	private JFormattedTextField jFormattedTextField4;
-	private JLabel jLabel18;
-	private JFormattedTextField jFormattedTextField3;
-	private JFormattedTextField jFormattedTextField2;
-	private JComboBox jComboBox3;
 	private JTextField jTextField4;
 	private JTextField jTextField3;
 	private JTextField jTextField2;
@@ -85,23 +75,16 @@ public class AlteraFornecedor extends JApplet {
 	private JPanel jPanel6;
 	private JPanel jPanel5;
 	private JTabbedPane jTabbedPane1;
-	private String UF[]={"","AC-Acre","AL-Alagoas","AP-Amapá","AM-Amazonas","BA-Bahia",
-            "CE-Ceará","ES-Espírito Santo","GO-Goiás","MA-Maranhão",
-            "MT-Mato Grosso","MS-Mato Grosso do Sul","MG-Minas Gerais",
-            "PA-Pará","PB-Paraíba","PR-Paraná","PE-Pernambuco","PI-Piauí",
-            "RJ-Rio de Janeiro","RN-Rio Grande do Norte",
-            "RG-Rio Grande do Sul","RO-Rondônia","RR-Roraima",
-            "SC-Santa Catarina","SP-São Paulo","SE-Sergipe","TO-Tocantins"};
 	
 	public static void main(String[] args) {
 		
-				JFrame frame = new JFrame("ALTERA FORNECEDOR");
+				JFrame frame = new JFrame("CONSULTA FUNCIONÁRIO");
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				AlteraFornecedor alteraFornecedor = new AlteraFornecedor();
-				alteraFornecedor.init();
-				alteraFornecedor.start();				
-				frame.getContentPane().add(alteraFornecedor);
-				frame.setPreferredSize(alteraFornecedor.getSize());
+				ConsultaFuncionario consultaFuncionario = new ConsultaFuncionario();
+				consultaFuncionario.init();
+				consultaFuncionario.start();				
+				frame.getContentPane().add(consultaFuncionario);
+				frame.setPreferredSize(consultaFuncionario.getSize());
 				frame.setVisible(true);
 			}
 		
@@ -119,31 +102,12 @@ public class AlteraFornecedor extends JApplet {
 				getContentPane().add(jPanel1);
 				getContentPane().add(getJTabbedPane1());
 				{
-	jPanel8 = new JPanel();
-					GridLayout jPanel8Layout = new GridLayout(1, 2);
-					jPanel8Layout.setColumns(2);
-					jPanel8Layout.setHgap(5);
-					jPanel8Layout.setVgap(5);
-					jPanel8.setLayout(jPanel8Layout);
-					getContentPane().add(jPanel8);
-			jPanel8.setBounds(151, 410, 203, 37);
-			jPanel8.setBorder(BorderFactory.createTitledBorder(""));
-			{
-				jButton1 = new JButton();
-				jPanel8.add(jButton1);
-				jButton1.setText("Alterar");
-				jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/TipoVeiculo.GIF")));
-				jButton1.setToolTipText("Clique para alterar os dados do fornecedor.");
-				jButton1.setSize(116, 28);
-			}
-			{
-				jButton2 = new JButton();
-				jPanel8.add(jButton2);
-				jButton2.setText("Sair");
-				jButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Sair.GIF")));
-				jButton2.setToolTipText("Clique para fechar o formulário.");
-				jButton2.setSize(116, 28);
-			}
+					jButton1 = new JButton();
+					getContentPane().add(jButton1);
+					jButton1.setText("Consultar");
+					jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Consultas.GIF")));
+					jButton1.setToolTipText("Clique para consultar os dados do Funcionário.");
+					jButton1.setBounds(187, 413, 118, 26);
 				}
 				jPanel1.setLayout(jPanel1Layout);
 				jPanel1.setBounds(12, 12, 460, 91);
@@ -157,14 +121,14 @@ public class AlteraFornecedor extends JApplet {
 					{
 						jRadioButton1 = new JRadioButton();
 						jPanel2.add(jRadioButton1);
-						jRadioButton1.setText("CNPJ/CPF");
+						jRadioButton1.setText("CPF");
 						jRadioButton1.setBounds(5, 19, 212, 19);
 						getButtonGroup1().add(jRadioButton1);
 					}
 					{
 						jRadioButton2 = new JRadioButton();
 						jPanel2.add(jRadioButton2);
-						jRadioButton2.setText("Razão Social");
+						jRadioButton2.setText("Nome Funcionário");
 						jRadioButton2.setBounds(5, 39, 211, 21);
 						getButtonGroup1().add(jRadioButton2);
 					}
@@ -184,7 +148,7 @@ public class AlteraFornecedor extends JApplet {
 						jPanel3.add(jComboBox1);
 						jComboBox1.setMaximumRowCount(4);
 						jComboBox1.setEnabled(false);
-						jComboBox1.setToolTipText("Selecione o CNPJ/CPF do fornecedor.");
+						jComboBox1.setToolTipText("Selecione o CPF do funcionário.");
 
 					}
 					{
@@ -192,7 +156,7 @@ public class AlteraFornecedor extends JApplet {
 						jPanel3.add(jComboBox2);
 						jComboBox2.setMaximumRowCount(4);
 						jComboBox2.setEnabled(false);
-						jComboBox2.setToolTipText("Selecione a razão social do fornecedor.");
+						jComboBox2.setToolTipText("Selecione o nome do funcionário");
 
 					}
 				}
@@ -215,45 +179,6 @@ public class AlteraFornecedor extends JApplet {
 			jTabbedPane1 = new JTabbedPane();
 			jTabbedPane1.setBounds(12, 122, 460, 276);
 			jTabbedPane1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-			{
-				jPanel4 = new JPanel();
-				jTabbedPane1.addTab("Fornecedor", null, jPanel4, null);
-				jPanel4.setLayout(null);
-				jPanel4.setBorder(BorderFactory.createTitledBorder(""));
-				{
-					jLabel16 = new JLabel();
-					jPanel4.add(jLabel16);
-					jLabel16.setText("Razão Social");
-					jLabel16.setBounds(5, 5, 217, 114);
-					jLabel16.setSize(217, 24);
-				}
-				{
-					jTextField16 = new JTextField();
-					jPanel4.add(jTextField16);
-					jTextField16.setBounds(227, 5, 217, 114);
-					jTextField16.setSize(217, 24);
-					jTextField16.setToolTipText("Informe a razão social do fornecedor.");
-					jTextField16.setEditable(false);
-					jTextField16.setColumns(100);
-				}
-				{
-					jLabel17 = new JLabel();
-					jPanel4.add(jLabel17);
-					jLabel17.setText("C.N.P.J./C.P.F.");
-					jLabel17.setBounds(5, 124, 217, 114);
-					jLabel17.setSize(217, 24);
-				}
-				{
-					jFormattedTextField1 = new JFormattedTextField();
-					jPanel4.add(jFormattedTextField1);
-					jFormattedTextField1.setBounds(227, 124, 217, 114);
-					jFormattedTextField1.setSize(217, 24);
-					jFormattedTextField1.setToolTipText("Informe o CNPJ ou CPF do fornecedor.");
-					jFormattedTextField1.setEditable(false);
-					jFormattedTextField1.setHorizontalAlignment(SwingConstants.CENTER);
-					jFormattedTextField1.setColumns(14);
-				}
-			}
 			jTabbedPane1.addTab("Endereço", null, getJPanel5(), null);
 			jTabbedPane1.addTab("Contatos", null, getJPanel6(), null);
 			jTabbedPane1.addTab("Dados Bancários", null, getJPanel7(), null);
@@ -279,10 +204,9 @@ public class AlteraFornecedor extends JApplet {
 			{
 				jTextField1 = new JTextField();
 				jPanel5.add(jTextField1);
-				jTextField1.setEditable(false);
 				jTextField1.setColumns(100);
 				jTextField1.setSize(217, 24);
-				jTextField1.setToolTipText("Informe o logradouro(Avenida, Rua, Praça, etc) do endereço.");
+				jTextField1.setEditable(false);
 			}
 			{
 				jLabel2 = new JLabel();
@@ -292,11 +216,9 @@ public class AlteraFornecedor extends JApplet {
 			{
 				jTextField2 = new JTextField();
 				jPanel5.add(jTextField2);
-				jTextField2.setEditable(false);
 				jTextField2.setColumns(5);
 				jTextField2.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField2.setToolTipText("Informe o número do imóvel.Se não tiver, informe zeros.");
-				jTextField2.setText("00000");
+				jTextField2.setEditable(false);
 			}
 			{
 				jLabel8 = new JLabel();
@@ -306,10 +228,9 @@ public class AlteraFornecedor extends JApplet {
 			{
 				jTextField8 = new JTextField();
 				jPanel5.add(jTextField8);
-				jTextField8.setEditable(false);
 				jTextField8.setColumns(15);
 				jTextField8.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField8.setToolTipText("Informe o CEP do logradouro.");
+				jTextField8.setEditable(false);
 			}
 			{
 				jLabel3 = new JLabel();
@@ -320,9 +241,8 @@ public class AlteraFornecedor extends JApplet {
 			{
 				jTextField3 = new JTextField();
 				jPanel5.add(jTextField3);
-				jTextField3.setEditable(false);
 				jTextField3.setColumns(50);
-				jTextField3.setToolTipText("Informe todos os dados complementares referentes ao logradouro(Quadra, Lote, etc).");
+				jTextField3.setEditable(false);
 			}
 			{
 				jLabel4 = new JLabel();
@@ -332,9 +252,8 @@ public class AlteraFornecedor extends JApplet {
 			{
 				jTextField4 = new JTextField();
 				jPanel5.add(jTextField4);
-				jTextField4.setEditable(false);
 				jTextField4.setColumns(50);
-				jTextField4.setToolTipText("Informe o Bairro que está localizado o fornecedor.");
+				jTextField4.setEditable(false);
 			}
 			{
 				jLabel5 = new JLabel();
@@ -344,8 +263,8 @@ public class AlteraFornecedor extends JApplet {
 			{
 				jTextField5 = new JTextField();
 				jPanel5.add(jTextField5);
-				jTextField5.setEditable(false);
 				jTextField5.setColumns(50);
+				jTextField5.setEditable(false);
 			}
 			{
 				jLabel6 = new JLabel();
@@ -353,14 +272,10 @@ public class AlteraFornecedor extends JApplet {
 				jLabel6.setText("Unidade Federativa");
 			}
 			{
-				ComboBoxModel jComboBox3Model = 
-					new DefaultComboBoxModel(UF);
-				jComboBox3 = new JComboBox();
-				jPanel5.add(jComboBox3);
-				jComboBox3.setModel(jComboBox3Model);
-				jComboBox3.setToolTipText("Selecione a Unidade Federativa do Fornecedor.");
-				jComboBox3.setEnabled(false);
-				jComboBox3.setMaximumRowCount(4);
+				jTextField6 = new JTextField();
+				jPanel5.add(jTextField6);
+				jTextField6.setColumns(20);
+				jTextField6.setEditable(false);
 			}
 			{
 				jLabel7 = new JLabel();
@@ -370,9 +285,8 @@ public class AlteraFornecedor extends JApplet {
 			{
 				jTextField7 = new JTextField();
 				jPanel5.add(jTextField7);
-				jTextField7.setEditable(false);
 				jTextField7.setColumns(50);
-				jTextField7.setToolTipText("Informe o País que está sediado o Fornecedor.");
+				jTextField7.setEditable(false);
 			}
 		}
 		return jPanel5;
@@ -391,14 +305,13 @@ public class AlteraFornecedor extends JApplet {
 				jLabel9.setSize(217, 24);
 			}
 			{
-				jFormattedTextField2 = new JFormattedTextField();
-				jPanel6.add(jFormattedTextField2);
-				jFormattedTextField2.setEditable(false);
-				jFormattedTextField2.setColumns(20);
-				jFormattedTextField2.setHorizontalAlignment(SwingConstants.CENTER);
-				jFormattedTextField2.setToolTipText("Informe o número do telefone fixo do fornecedor.");
-				jFormattedTextField2.setBounds(227, 5, 217, 42);
-				jFormattedTextField2.setSize(217, 24);
+				jTextField9 = new JTextField();
+				jPanel6.add(jTextField9);
+				jTextField9.setEditable(false);
+				jTextField9.setColumns(20);
+				jTextField9.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField9.setBounds(227, 5, 217, 42);
+				jTextField9.setSize(217, 24);
 			}
 			{
 				jLabel10 = new JLabel();
@@ -408,37 +321,33 @@ public class AlteraFornecedor extends JApplet {
 				jLabel10.setSize(217, 24);
 			}
 			{
-				jFormattedTextField3 = new JFormattedTextField();
-				jPanel6.add(jFormattedTextField3);
-				jFormattedTextField3.setEditable(false);
-				jFormattedTextField3.setColumns(20);
-				jFormattedTextField3.setHorizontalAlignment(SwingConstants.CENTER);
-				jFormattedTextField3.setToolTipText("Informe o número telefone celular do fornecedor.");
-				jFormattedTextField3.setBounds(227, 52, 217, 42);
-				jFormattedTextField3.setSize(217, 24);
+				jTextField10 = new JTextField();
+				jPanel6.add(jTextField10);
+				jTextField10.setEditable(false);
+				jTextField10.setColumns(20);
+				jTextField10.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField10.setBounds(227, 52, 217, 42);
+				jTextField10.setSize(217, 24);
 			}
 			{
-				jLabel18 = new JLabel();
-				jPanel6.add(jLabel18);
-				jLabel18.setText("Telefone Nextel");
-				jLabel18.setBounds(5, 99, 217, 42);
-				jLabel18.setSize(217, 24);
+				jLabel16 = new JLabel();
+				jPanel6.add(jLabel16);
+				jLabel16.setText("Telefone Nextel");
+				jLabel16.setBounds(5, 99, 217, 42);
 			}
 			{
-				jFormattedTextField4 = new JFormattedTextField();
-				jPanel6.add(jFormattedTextField4);
-				jFormattedTextField4.setEditable(false);
-				jFormattedTextField4.setHorizontalAlignment(SwingConstants.CENTER);
-				jFormattedTextField4.setColumns(20);
-				jFormattedTextField4.setToolTipText("Informe o número do telefone móvel da operadora Nextel.");
-				jFormattedTextField4.setBounds(227, 99, 217, 42);
-				jFormattedTextField4.setSize(217, 24);
+				jTextField16 = new JTextField();
+				jPanel6.add(jTextField16);
+				jTextField16.setEditable(false);
+				jTextField16.setHorizontalAlignment(SwingConstants.CENTER);
+				jTextField16.setColumns(20);
+				jTextField16.setBounds(227, 99, 217, 42);
 			}
 			{
 				jLabel11 = new JLabel();
 				jPanel6.add(jLabel11);
 				jLabel11.setText("Email");
-				jLabel11.setBounds(5, 146, 217, 23);
+				jLabel11.setBounds(5, 99, 217, 42);
 				jLabel11.setSize(217, 24);
 			}
 			{
@@ -447,14 +356,15 @@ public class AlteraFornecedor extends JApplet {
 				jTextField11.setEditable(false);
 				jTextField11.setColumns(20);
 				jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField11.setBounds(227, 146, 217, 24);
-				jTextField11.setToolTipText("Informe um email válido.");
+				jTextField11.setBounds(227, 99, 217, 42);
+				jTextField11.setSize(217, 24);
 			}
 			{
 				jLabel12 = new JLabel();
 				jPanel6.add(jLabel12);
 				jLabel12.setText("Messenger");
-				jLabel12.setBounds(5, 193, 217, 24);
+				jLabel12.setBounds(5, 146, 217, 42);
+				jLabel12.setSize(217, 24);
 			}
 			{
 				jTextField12 = new JTextField();
@@ -462,8 +372,8 @@ public class AlteraFornecedor extends JApplet {
 				jTextField12.setEditable(false);
 				jTextField12.setColumns(20);
 				jTextField12.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField12.setBounds(227, 193, 217, 24);
-				jTextField12.setToolTipText("Informe a designação de usuário do Messenger preferido do Fornecedor.");
+				jTextField12.setBounds(227, 146, 217, 42);
+				jTextField12.setSize(217, 24);
 			}
 		}
 		return jPanel6;
@@ -489,8 +399,6 @@ public class AlteraFornecedor extends JApplet {
 				jTextField13.setHorizontalAlignment(SwingConstants.CENTER);
 				jTextField13.setBounds(227, 5, 217, 74);
 				jTextField13.setSize(217, 24);
-				jTextField13.setToolTipText("Informe o nome do Banco que o Fornecedor mantém conta corrente.");
-
 			}
 			{
 				jLabel14 = new JLabel();
@@ -507,7 +415,6 @@ public class AlteraFornecedor extends JApplet {
 				jTextField14.setHorizontalAlignment(SwingConstants.CENTER);
 				jTextField14.setBounds(227, 84, 217, 74);
 				jTextField14.setSize(217, 24);
-				jTextField14.setToolTipText("Informe o número da Agência que o Fornecedor mantém conta corrente.");
 			}
 			{
 				jLabel15 = new JLabel();
@@ -524,7 +431,6 @@ public class AlteraFornecedor extends JApplet {
 				jTextField15.setHorizontalAlignment(SwingConstants.CENTER);
 				jTextField15.setBounds(227, 163, 217, 74);
 				jTextField15.setSize(217, 24);
-				jTextField15.setToolTipText("Informe o número da conta corrente do Fornecedor.");
 			}
 		}
 		return jPanel7;
