@@ -48,7 +48,6 @@ public class AlteraFornecedor extends JApplet {
 	private JLabel jLabel15;
 	private JTextField jTextField14;
 	private JLabel jLabel14;
-	private JTextField jTextField13;
 	private JLabel jLabel13;
 	private JTextField jTextField12;
 	private JLabel jLabel12;
@@ -61,6 +60,7 @@ public class AlteraFornecedor extends JApplet {
 	private JTextField jTextField7;
 	private JLabel jLabel6;
 	private JTextField jTextField5;
+	private JComboBox jComboBox4;
 	private JButton jButton2;
 	private JButton jButton1;
 	private JPanel jPanel8;
@@ -85,13 +85,59 @@ public class AlteraFornecedor extends JApplet {
 	private JPanel jPanel6;
 	private JPanel jPanel5;
 	private JTabbedPane jTabbedPane1;
-	private String UF[]={"","AC-Acre","AL-Alagoas","AP-Amapá","AM-Amazonas","BA-Bahia",
+	private String uF[]={"","AC-Acre","AL-Alagoas","AP-Amapá","AM-Amazonas","BA-Bahia",
             "CE-Ceará","ES-Espírito Santo","GO-Goiás","MA-Maranhão",
             "MT-Mato Grosso","MS-Mato Grosso do Sul","MG-Minas Gerais",
             "PA-Pará","PB-Paraíba","PR-Paraná","PE-Pernambuco","PI-Piauí",
             "RJ-Rio de Janeiro","RN-Rio Grande do Norte",
             "RG-Rio Grande do Sul","RO-Rondônia","RR-Roraima",
             "SC-Santa Catarina","SP-São Paulo","SE-Sergipe","TO-Tocantins"};
+	private String bancos[]={"",
+            "BANCO ABN AMRO REAL S.A - 356",
+            "BANCO BANERJ S.A - 029",
+            "BANCO BANESTADO S.A - 038",
+            "BANCO BEG S.A - 031",
+            "BANCO BMC S.A - 394",
+            "BANCO BMG S.A - 318",
+            "BANCO BRADESCO S.A - 237",
+            "BANCO CACIQUE S.A - 263",
+            "BANCO CITIBANK S.A - 745",
+            "BANCO COMERCIAL E DE INVESTIMENTO SUDAMERIS S.A - 215",
+            "BANCO COOPERATIVO DO BRASIL S.A - 756",
+            "BANCO COOPERATIVO SICREDI S.A - 748",
+            "BANCO CRUZEIRO DO SUL S.A - 229",
+            "BANCO DA AMAZÔNIA S.A - 003",
+            "BANCO DE PERNAMBUCO S.A - 024",
+            "BANCO DO BRASIL S.A - 001",
+            "BANCO DO ESTADO DE SANTA CATARINA S.A - 027",
+            "BANCO DO ESTADO DE SÃO PAULO S.A - 033",
+            "BANCO DO ESTADO DE SERGIPE S.A - 047",
+            "BANCO DO ESTADO DO PARÁ S.A - 037",
+            "BANCO DO ESTADO DO PIAUÍ S.A - 039",
+            "BANCO DO ESTADO DO RIO GRANDE DO SUL S.A - 041",
+            "BANCO DO NORDESTE DO BRASIL S.A - 004",
+            "BANCO FINASA S.A - 175",
+            "BANCO FININVEST S.A - 252",
+            "BANCO IBI S.A - 063",
+            "BANCO ITAÚ S.A - 341",
+            "BANCO MERCANTIL DE SÃO PAULO S.A - 392",
+            "BANCO MERCANTIL DO BRASIL S.A - 389",
+            "BANCO NOSSA CAIXA S.A - 151",
+            "BANCO PANAMERICANO S.A - 623",
+            "BANCO RURAL S.A - 453",
+            "BANCO SAFRA S.A",
+            "BANCO SANTANDER BRASIL S.A - 353",
+            "BANCO SANTANDER MERIDIONAL S.A - 008",
+            "BANCO SANTANDER S.A - 351",
+            "BANCO SUDAMERIS BRASIL S.A - 347",
+            "BANCO DO ESTADO DO ESPÍRITO SANTO S.A - 021",
+            "BANKBOSTON BANCO MÚLTIPLO S.A - 479",
+            "BANCO DE BRASÍLIA S.A - 070",
+            "CAIXA ECONÔMICA FEDERAL - 104",
+            "HSBC BANK BRASIL S.A - 399",
+            "PARANÁ BANCO S.A - 254",
+            "UNIBANCO - UNIÃO DE BANCOS BRASILEIROS S.A - 499",
+            "UNICARD BANCO MÚLTIPLO S.A - 230"};
 	
 	public static void main(String[] args) {
 		
@@ -240,14 +286,12 @@ public class AlteraFornecedor extends JApplet {
 					jLabel17 = new JLabel();
 					jPanel4.add(jLabel17);
 					jLabel17.setText("C.N.P.J./C.P.F.");
-					jLabel17.setBounds(5, 124, 217, 114);
-					jLabel17.setSize(217, 24);
+					jLabel17.setBounds(5, 41, 219, 25);
 				}
 				{
 					jFormattedTextField1 = new JFormattedTextField();
 					jPanel4.add(jFormattedTextField1);
-					jFormattedTextField1.setBounds(227, 124, 217, 114);
-					jFormattedTextField1.setSize(217, 24);
+					jFormattedTextField1.setBounds(227, 42, 219, 25);
 					jFormattedTextField1.setToolTipText("Informe o CNPJ ou CPF do fornecedor.");
 					jFormattedTextField1.setEditable(false);
 					jFormattedTextField1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -354,7 +398,7 @@ public class AlteraFornecedor extends JApplet {
 			}
 			{
 				ComboBoxModel jComboBox3Model = 
-					new DefaultComboBoxModel(UF);
+					new DefaultComboBoxModel(uF);
 				jComboBox3 = new JComboBox();
 				jPanel5.add(jComboBox3);
 				jComboBox3.setModel(jComboBox3Model);
@@ -404,7 +448,7 @@ public class AlteraFornecedor extends JApplet {
 				jLabel10 = new JLabel();
 				jPanel6.add(jLabel10);
 				jLabel10.setText("Telefone Celular");
-				jLabel10.setBounds(5, 52, 217, 42);
+				jLabel10.setBounds(5, 41, 217, 22);
 				jLabel10.setSize(217, 24);
 			}
 			{
@@ -414,14 +458,14 @@ public class AlteraFornecedor extends JApplet {
 				jFormattedTextField3.setColumns(20);
 				jFormattedTextField3.setHorizontalAlignment(SwingConstants.CENTER);
 				jFormattedTextField3.setToolTipText("Informe o número telefone celular do fornecedor.");
-				jFormattedTextField3.setBounds(227, 52, 217, 42);
-				jFormattedTextField3.setSize(217, 24);
+				jFormattedTextField3.setBounds(227, 41, 218, 24);
+				jFormattedTextField3.setSize(218, 24);
 			}
 			{
 				jLabel18 = new JLabel();
 				jPanel6.add(jLabel18);
 				jLabel18.setText("Telefone Nextel");
-				jLabel18.setBounds(5, 99, 217, 42);
+				jLabel18.setBounds(5, 75, 217, 27);
 				jLabel18.setSize(217, 24);
 			}
 			{
@@ -431,15 +475,15 @@ public class AlteraFornecedor extends JApplet {
 				jFormattedTextField4.setHorizontalAlignment(SwingConstants.CENTER);
 				jFormattedTextField4.setColumns(20);
 				jFormattedTextField4.setToolTipText("Informe o número do telefone móvel da operadora Nextel.");
-				jFormattedTextField4.setBounds(227, 99, 217, 42);
+				jFormattedTextField4.setBounds(227, 77, 217, 28);
 				jFormattedTextField4.setSize(217, 24);
 			}
 			{
 				jLabel11 = new JLabel();
 				jPanel6.add(jLabel11);
 				jLabel11.setText("Email");
-				jLabel11.setBounds(5, 146, 217, 23);
-				jLabel11.setSize(217, 24);
+				jLabel11.setBounds(5, 114, 218, 26);
+				jLabel11.setSize(218, 24);
 			}
 			{
 				jTextField11 = new JTextField();
@@ -447,14 +491,16 @@ public class AlteraFornecedor extends JApplet {
 				jTextField11.setEditable(false);
 				jTextField11.setColumns(20);
 				jTextField11.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField11.setBounds(227, 146, 217, 24);
+				jTextField11.setBounds(227, 117, 217, 28);
 				jTextField11.setToolTipText("Informe um email válido.");
+				jTextField11.setSize(217, 24);
 			}
 			{
 				jLabel12 = new JLabel();
 				jPanel6.add(jLabel12);
 				jLabel12.setText("Messenger");
-				jLabel12.setBounds(5, 193, 217, 24);
+				jLabel12.setBounds(5, 152, 219, 28);
+				jLabel12.setSize(219, 24);
 			}
 			{
 				jTextField12 = new JTextField();
@@ -462,8 +508,9 @@ public class AlteraFornecedor extends JApplet {
 				jTextField12.setEditable(false);
 				jTextField12.setColumns(20);
 				jTextField12.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField12.setBounds(227, 193, 217, 24);
+				jTextField12.setBounds(227, 155, 217, 26);
 				jTextField12.setToolTipText("Informe a designação de usuário do Messenger preferido do Fornecedor.");
+				jTextField12.setSize(217, 24);
 			}
 		}
 		return jPanel6;
@@ -478,26 +525,22 @@ public class AlteraFornecedor extends JApplet {
 				jLabel13 = new JLabel();
 				jPanel7.add(jLabel13);
 				jLabel13.setText("Banco");
-				jLabel13.setBounds(5, 5, 217, 74);
-				jLabel13.setSize(217, 24);
+				jLabel13.setBounds(5, 5, 217, 24);
 			}
 			{
-				jTextField13 = new JTextField();
-				jPanel7.add(jTextField13);
-				jTextField13.setEditable(false);
-				jTextField13.setColumns(20);
-				jTextField13.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField13.setBounds(227, 5, 217, 74);
-				jTextField13.setSize(217, 24);
-				jTextField13.setToolTipText("Informe o nome do Banco que o Fornecedor mantém conta corrente.");
-
+				ComboBoxModel jComboBox4Model = 
+					new DefaultComboBoxModel(bancos);							
+				jComboBox4 = new JComboBox();
+				jPanel7.add(jComboBox4);
+				jComboBox4.setModel(jComboBox4Model);
+				jComboBox4.setBounds(227, 5, 217, 74);
+				jComboBox4.setSize(217, 24);
 			}
 			{
 				jLabel14 = new JLabel();
 				jPanel7.add(jLabel14);
 				jLabel14.setText("Agência");
-				jLabel14.setBounds(5, 84, 217, 74);
-				jLabel14.setSize(217, 24);
+				jLabel14.setBounds(5, 41, 219, 24);
 			}
 			{
 				jTextField14 = new JTextField();
@@ -505,16 +548,14 @@ public class AlteraFornecedor extends JApplet {
 				jTextField14.setEditable(false);
 				jTextField14.setColumns(20);
 				jTextField14.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField14.setBounds(227, 84, 217, 74);
-				jTextField14.setSize(217, 24);
+				jTextField14.setBounds(227, 42, 217, 24);
 				jTextField14.setToolTipText("Informe o número da Agência que o Fornecedor mantém conta corrente.");
 			}
 			{
 				jLabel15 = new JLabel();
 				jPanel7.add(jLabel15);
 				jLabel15.setText("Conta Corrente");
-				jLabel15.setBounds(5, 163, 217, 74);
-				jLabel15.setSize(217, 24);
+				jLabel15.setBounds(5, 77, 217, 24);
 			}
 			{
 				jTextField15 = new JTextField();
@@ -522,8 +563,7 @@ public class AlteraFornecedor extends JApplet {
 				jTextField15.setEditable(false);
 				jTextField15.setColumns(20);
 				jTextField15.setHorizontalAlignment(SwingConstants.CENTER);
-				jTextField15.setBounds(227, 163, 217, 74);
-				jTextField15.setSize(217, 24);
+				jTextField15.setBounds(227, 78, 217, 24);
 				jTextField15.setToolTipText("Informe o número da conta corrente do Fornecedor.");
 			}
 		}
