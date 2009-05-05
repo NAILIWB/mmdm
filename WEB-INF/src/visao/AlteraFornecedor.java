@@ -535,6 +535,7 @@ public class AlteraFornecedor extends JApplet {
 				jComboBox4.setModel(jComboBox4Model);
 				jComboBox4.setBounds(227, 5, 217, 74);
 				jComboBox4.setSize(217, 24);
+				jComboBox4.setEnabled(false);
 			}
 			{
 				jLabel14 = new JLabel();
