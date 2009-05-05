@@ -4,6 +4,8 @@ import javax.swing.JApplet;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -33,7 +35,7 @@ import javax.swing.border.SoftBevelBorder;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 @SuppressWarnings("serial")
-public class ConsultaCliente extends JApplet {
+public class AlteraCliente extends JApplet {
 
 	private JTabbedPane jTabbedPane1;
     private JPanel jPanel1;
@@ -51,6 +53,12 @@ public class ConsultaCliente extends JApplet {
     private JTextField jTextField14;
     private JLabel jLabel23;
     private JLabel jLabel21;
+    private JComboBox jComboBox5;
+    private JComboBox jComboBox4;
+    private JComboBox jComboBox3;
+    private JLabel jLabel2;
+    private JTextField jTextField16;
+    private JLabel jLabel1;
     private JComboBox jComboBox2;
     private JComboBox jComboBox1;
     private ButtonGroup buttonGroup1;
@@ -61,7 +69,6 @@ public class ConsultaCliente extends JApplet {
     private JTextField jTextField11;
     private JLabel jLabel22;
     private JTextField jTextField13;
-    private JTextField jTextField12;
     private JLabel jLabel20;
     private JLabel jLabel19;
     private JLabel jLabel18;
@@ -75,7 +82,6 @@ public class ConsultaCliente extends JApplet {
     private JLabel jLabel15;
     private JLabel jLabel14;
     private JLabel jLabel13;
-    private JTextField jTextField8;
     private JTextField jTextField7;
     private JFormattedTextField jFormattedTextField2;
     private JLabel jLabel12;
@@ -92,16 +98,70 @@ public class ConsultaCliente extends JApplet {
     private JPanel jPanel4;
     private JPanel jPanel3;
     private JPanel jPanel2;
+    private String status[]={"","Sim","Não"};
+    private String estados[]={"","AC-Acre","AL-Alagoas","AP-Amapá","AM-Amazonas","BA-Bahia",
+            "CE-Ceará","ES-Espírito Santo","GO-Goiás","MA-Maranhão",
+            "MT-Mato Grosso","MS-Mato Grosso do Sul","MG-Minas Gerais",
+            "PA-Pará","PB-Paraíba","PR-Paraná","PE-Pernambuco","PI-Piauí",
+            "RJ-Rio de Janeiro","RN-Rio Grande do Norte",
+            "RG-Rio Grande do Sul","RO-Rondônia","RR-Roraima",
+            "SC-Santa Catarina","SP-São Paulo","SE-Sergipe","TO-Tocantins"};
+    private String bancos[]={"",
+            "BANCO ABN AMRO REAL S.A - 356",
+            "BANCO BANERJ S.A - 029",
+            "BANCO BANESTADO S.A - 038",
+            "BANCO BEG S.A - 031",
+            "BANCO BMC S.A - 394",
+            "BANCO BMG S.A - 318",
+            "BANCO BRADESCO S.A - 237",
+            "BANCO CACIQUE S.A - 263",
+            "BANCO CITIBANK S.A - 745",
+            "BANCO COMERCIAL E DE INVESTIMENTO SUDAMERIS S.A - 215",
+            "BANCO COOPERATIVO DO BRASIL S.A - 756",
+            "BANCO COOPERATIVO SICREDI S.A - 748",
+            "BANCO CRUZEIRO DO SUL S.A - 229",
+            "BANCO DA AMAZÔNIA S.A - 003",
+            "BANCO DE PERNAMBUCO S.A - 024",
+            "BANCO DO BRASIL S.A - 001",
+            "BANCO DO ESTADO DE SANTA CATARINA S.A - 027",
+            "BANCO DO ESTADO DE SÃO PAULO S.A - 033",
+            "BANCO DO ESTADO DE SERGIPE S.A - 047",
+            "BANCO DO ESTADO DO PARÁ S.A - 037",
+            "BANCO DO ESTADO DO PIAUÍ S.A - 039",
+            "BANCO DO ESTADO DO RIO GRANDE DO SUL S.A - 041",
+            "BANCO DO NORDESTE DO BRASIL S.A - 004",
+            "BANCO FINASA S.A - 175",
+            "BANCO FININVEST S.A - 252",
+            "BANCO IBI S.A - 063",
+            "BANCO ITAÚ S.A - 341",
+            "BANCO MERCANTIL DE SÃO PAULO S.A - 392",
+            "BANCO MERCANTIL DO BRASIL S.A - 389",
+            "BANCO NOSSA CAIXA S.A - 151",
+            "BANCO PANAMERICANO S.A - 623",
+            "BANCO RURAL S.A - 453",
+            "BANCO SAFRA S.A",
+            "BANCO SANTANDER BRASIL S.A - 353",
+            "BANCO SANTANDER MERIDIONAL S.A - 008",
+            "BANCO SANTANDER S.A - 351",
+            "BANCO SUDAMERIS BRASIL S.A - 347",
+            "BANCO DO ESTADO DO ESPÍRITO SANTO S.A - 021",
+            "BANKBOSTON BANCO MÚLTIPLO S.A - 479",
+            "BANCO DE BRASÍLIA S.A - 070",
+            "CAIXA ECONÔMICA FEDERAL - 104",
+            "HSBC BANK BRASIL S.A - 399",
+            "PARANÁ BANCO S.A - 254",
+            "UNIBANCO - UNIÃO DE BANCOS BRASILEIROS S.A - 499",
+            "UNICARD BANCO MÚLTIPLO S.A - 230"};
     
     public static void main(String[] args) {
             
-                            JFrame frame = new JFrame("CONSULTA DADOS DO CLIENTE");
+                            JFrame frame = new JFrame("ALTERA DADOS DO CLIENTE");
                             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            ConsultaCliente consultaCliente = new ConsultaCliente();
-                            consultaCliente.init();
-                            consultaCliente.start();
-                            frame.getContentPane().add(consultaCliente);
-                            frame.setPreferredSize(consultaCliente.getSize());
+                            AlteraCliente alteraCliente = new AlteraCliente();
+                            alteraCliente.init();
+                            alteraCliente.start();
+                            frame.getContentPane().add(alteraCliente);
+                            frame.setPreferredSize(alteraCliente.getSize());
                             frame.setVisible(true);
                     }
             
@@ -115,46 +175,74 @@ public class ConsultaCliente extends JApplet {
                             jTabbedPane1.setBounds(12, 110, 474, 329);
                             jTabbedPane1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
                             {
-                                    jPanel1 = new JPanel();
-                                    jTabbedPane1.addTab("Cliente", null, jPanel1, null);
-                                    jPanel1.setLayout(null);
-                                    jPanel1.setBorder(BorderFactory.createTitledBorder(""));
-                                    jPanel1.setPreferredSize(new java.awt.Dimension(465, 178));
-                                    jPanel1.setToolTipText("Informe os dados do cliente");
-                                    {
-                                            jLabel3 = new JLabel();
-                                            jPanel1.add(jLabel3);
-                                            jLabel3.setText("Representante Legal");
-                                            jLabel3.setBounds(5, 17, 208, 24);
-                                    }
-                                    {
-                                    	jTextField3 = new JTextField();
-                                    	jPanel1.add(jTextField3);
-                                    	jTextField3.setToolTipText("Nome do representante legal da empresa.");
-                                    	jTextField3.setBounds(231, 18, 218, 22);
-                                    	jTextField3.setColumns(100);
-
-                                    	jTextField3.setEditable(false);
-                                    	jTextField3.setHorizontalAlignment(SwingConstants.CENTER);
-                                    	jTextField3.setSize(218, 24);
-                                    }
-                                    {
-                                            jLabel4 = new JLabel();
-                                            jPanel1.add(jLabel4);
-                                            jLabel4.setText("Despacho Disponível");
-                                            jLabel4.setBounds(5, 61, 208, 24);
-                                    }
-                                    {
-                                    	jTextField1 = new JTextField();
-                                    	jPanel1.add(jTextField1);
-                                    	jTextField1.setToolTipText("Despacho");
-                                    	jTextField1.setEditable(false);
-                                    	jTextField1.setHorizontalAlignment(SwingConstants.CENTER);
-                                    	jTextField1.setColumns(20);
-                                    	jTextField1.setBounds(231, 62, 217, 25);
-                                    	jTextField1.setSize(217, 24);
-                                    }
-
+                            	jPanel1 = new JPanel();
+                            	jTabbedPane1.addTab("Cliente", null, jPanel1, null);
+                            	jPanel1.setLayout(null);
+                            	jPanel1.setBorder(BorderFactory.createTitledBorder(""));
+                            	jPanel1.setToolTipText("Informe os dados do cliente");
+                            	jPanel1.setBounds(17, 136, 463, 297);
+                            	{
+                            		jLabel1 = new JLabel();
+                            		jPanel1.add(jLabel1);
+                            		jLabel1.setText("Razão Social");
+                            		jLabel1.setBounds(5, 5, 217, 24);
+                            	}
+                            	{
+                            		jTextField1 = new JTextField();
+                            		jPanel1.add(jTextField1);
+                            		jTextField1.setToolTipText("Despacho");
+                            		jTextField1.setEditable(false);
+                            		jTextField1.setHorizontalAlignment(SwingConstants.CENTER);
+                            		jTextField1.setColumns(20);
+                            		jTextField1.setBounds(234, 5, 224, 24);
+                            	}
+                            	{
+                            		jLabel2 = new JLabel();
+                            		jPanel1.add(jLabel2);
+                            		jLabel2.setText("CNPJ/CPF");
+                            		jLabel2.setBounds(5, 41, 217, 24);
+                            	}
+                            	{
+                            		jTextField3 = new JTextField();
+                            		jPanel1.add(jTextField3);
+                            		jTextField3.setToolTipText("Nome do representante legal da empresa.");
+                            		jTextField3.setBounds(234, 41, 224, 24);
+                            		jTextField3.setColumns(100);
+                            		
+                            		jTextField3.setEditable(false);
+                            		jTextField3.setHorizontalAlignment(SwingConstants.CENTER);
+                            	}
+                            	{
+                            		jLabel3 = new JLabel();
+                            		jPanel1.add(jLabel3);
+                            		jLabel3.setText("Representante Legal");
+                            		jLabel3.setBounds(5, 77, 217, 24);
+                            	}
+                            	{
+                            		jTextField16 = new JTextField();
+                            		jPanel1.add(jTextField16);
+                            		jTextField16.setBounds(234, 77, 224, 24);
+                            		jTextField16.setEditable(false);
+                            	}
+                            	{
+                            		jLabel4 = new JLabel();
+                            		jPanel1.add(jLabel4);
+                            		jLabel4.setText("Despacho Disponível");
+                            		jLabel4.setBounds(5, 114, 217, 24);
+                            	}
+                            	{
+                            		ComboBoxModel jComboBox3Model = 
+                            			new DefaultComboBoxModel(status);
+                            		
+                            		jComboBox3 = new JComboBox();
+                            		jPanel1.add(jComboBox3);
+                            		jComboBox3.setModel(jComboBox3Model);
+                            		jComboBox3.setBounds(234, 113, 224, 24);
+                            		jComboBox3.setToolTipText("Selecione um dos status.");
+                            		jComboBox3.setMaximumRowCount(4);
+                            		jComboBox3.setEnabled(false);
+                            	}
+                            	
                             }
                             {
                                     jPanel2 = new JPanel();
@@ -168,6 +256,7 @@ public class ConsultaCliente extends JApplet {
                                             jPanel2.add(jLabel5);
                                             jLabel5.setText("Logradouro");
                                             jLabel5.setBounds(5, 8, 214, 27);
+                                            jLabel5.setSize(214, 24);
                                     }
                                     {
                                     	jTextField2 = new JTextField();
@@ -183,6 +272,7 @@ public class ConsultaCliente extends JApplet {
                                             jPanel2.add(jLabel6);
                                             jLabel6.setText("Número");
                                             jLabel6.setBounds(5, 43, 214, 27);
+                                            jLabel6.setSize(214, 24);
                                     }
                                     {
                                     	jTextField4 = new JTextField();
@@ -197,6 +287,7 @@ public class ConsultaCliente extends JApplet {
                                             jPanel2.add(jLabel7);
                                             jLabel7.setText("Complemento");
                                             jLabel7.setBounds(5, 79, 214, 27);
+                                            jLabel7.setSize(214, 24);
                                     }
                                     {
                                     	jTextField5 = new JTextField();
@@ -212,6 +303,7 @@ public class ConsultaCliente extends JApplet {
                                             jPanel2.add(jLabel8);
                                             jLabel8.setText("Bairro");
                                             jLabel8.setBounds(5, 116, 214, 27);
+                                            jLabel8.setSize(214, 24);
                                     }
                                     {
                                     	jTextField6 = new JTextField();
@@ -227,6 +319,7 @@ public class ConsultaCliente extends JApplet {
                                     	jPanel2.add(jLabel12);
                                     	jLabel12.setText("C.E.P.");
                                     	jLabel12.setBounds(5, 222, 214, 27);
+                                    	jLabel12.setSize(214, 24);
                                     }
                                     {
                                     	jFormattedTextField2 = new JFormattedTextField();
@@ -242,6 +335,7 @@ public class ConsultaCliente extends JApplet {
                                             jPanel2.add(jLabel9);
                                             jLabel9.setText("Cidade");
                                             jLabel9.setBounds(5, 152, 214, 27);
+                                            jLabel9.setSize(214, 24);
                                     }
                                     {
                                     	jTextField7 = new JTextField();
@@ -257,22 +351,27 @@ public class ConsultaCliente extends JApplet {
                                             jPanel2.add(jLabel10);
                                             jLabel10.setText("Estado");
                                             jLabel10.setBounds(5, 186, 214, 27);
+                                            jLabel10.setSize(214, 24);
                                     }
                                     {
-                                    	jTextField8 = new JTextField();
-                                    	jPanel2.add(jTextField8);
-                                    	jTextField8.setBounds(242, 186, 217, 24);
-                                    	jTextField8.setHorizontalAlignment(SwingConstants.CENTER);
-                                    	jTextField8.setToolTipText("Unidade Federativa.");
-                                    	jTextField8.setColumns(20);
-                                    	jTextField8.setEditable(false);
-                                    	jTextField8.setSize(217, 24);
+                                    	ComboBoxModel jComboBox4Model = 
+                                    		new DefaultComboBoxModel(estados);
+                                    	
+                                    	jComboBox4 = new JComboBox();
+                                    	jPanel2.add(jComboBox4);
+                                    	jComboBox4.setModel(jComboBox4Model);
+                                    	jComboBox4.setBounds(243, 188, 215, 24);
+                                    	jComboBox4.setSize(217, 24);
+                                    	jComboBox4.setToolTipText("Selecione a unidade federativa.");
+                                    	jComboBox4.setMaximumRowCount(4);
+                                    	jComboBox4.setEnabled(false);
                                     }
                                     {
                                             jLabel11 = new JLabel();
                                             jPanel2.add(jLabel11);
                                             jLabel11.setText("País");
                                             jLabel11.setBounds(5, 263, 214, 27);
+                                            jLabel11.setSize(214, 24);
                                     }
                                     {
                                     	jTextField11 = new JTextField();
@@ -384,14 +483,16 @@ public class ConsultaCliente extends JApplet {
                                             jLabel18.setSize(212, 24);
                                     }
                                     {
-                                    	jTextField12 = new JTextField();
-                                    	jPanel4.add(jTextField12);
-                                    	jTextField12.setBounds(233, 5, 215, 24);
-                                    	jTextField12.setColumns(20);
-                                    	jTextField12.setHorizontalAlignment(SwingConstants.CENTER);
-                                    	jTextField12.setToolTipText("Número do banco.");
-                                    	jTextField12.setEditable(false);
-                                    	jTextField12.setSize(217, 24);
+                                    	ComboBoxModel jComboBox5Model = 
+                                    		new DefaultComboBoxModel(bancos);
+                                    				
+                                    	jComboBox5 = new JComboBox();
+                                    	jPanel4.add(jComboBox5);
+                                    	jComboBox5.setModel(jComboBox5Model);
+                                    	jComboBox5.setEnabled(false);
+                                    	jComboBox5.setMaximumRowCount(4);
+                                    	jComboBox5.setToolTipText("Selecione um banco.");
+                                    	jComboBox5.setBounds(241, 5, 216, 24);
                                     }
                                     {
                                             jLabel19 = new JLabel();
@@ -402,12 +503,11 @@ public class ConsultaCliente extends JApplet {
                                     {
                                     	jTextField13 = new JTextField();
                                     	jPanel4.add(jTextField13);
-                                    	jTextField13.setBounds(233, 41, 215, 24);
+                                    	jTextField13.setBounds(241, 41, 216, 24);
                                     	jTextField13.setColumns(20);
                                     	jTextField13.setHorizontalAlignment(SwingConstants.CENTER);
                                     	jTextField13.setToolTipText("Número da agência.");
                                     	jTextField13.setEditable(false);
-                                    	jTextField13.setSize(217, 24);
                                     }
                                     {
                                             jLabel20 = new JLabel();
@@ -419,8 +519,7 @@ public class ConsultaCliente extends JApplet {
                                     	jTextField15 = new JTextField();
                                     	jPanel4.add(jTextField15);
                                     	jTextField15.setEditable(false);
-                                    	jTextField15.setBounds(233, 80, 215, 24);
-                                    	jTextField15.setSize(217, 24);
+                                    	jTextField15.setBounds(241, 80, 215, 24);
                                     }
 
                                     {
@@ -433,50 +532,45 @@ public class ConsultaCliente extends JApplet {
                                             jLabel21 = new JLabel();
                                             jPanel5.add(jLabel21);
                                             jLabel21.setText("Tipo Acesso");
-                                            jLabel21.setBounds(17, 21, 196, 24);
+                                            jLabel21.setBounds(5, 6, 201, 26);
                                     }
                                     {
                                     	jTextField14 = new JTextField();
                                     	jPanel5.add(jTextField14);
-                                    	jTextField14.setBounds(231, 20, 216, 23);
+                                    	jTextField14.setBounds(241, 5, 217, 24);
                                     	jTextField14.setToolTipText("Informe o tipo de acesso remoto.");
                                     	jTextField14.setHorizontalAlignment(SwingConstants.CENTER);
                                     	jTextField14.setColumns(50);
-                                    	jTextField14.setSize(217, 24);
                                     	jTextField14.setEditable(false);
                                     }
                                     {
                                             jLabel22 = new JLabel();
                                             jPanel5.add(jLabel22);
                                             jLabel22.setText("IP Acesso");
-                                            jLabel22.setBounds(17, 58, 196, 26);
-                                            jLabel22.setSize(196, 24);
+                                            jLabel22.setBounds(5, 44, 200, 23);
                                     }
                                     {
                                     	jFormattedTextField6 = new JFormattedTextField();
                                     	jPanel5.add(jFormattedTextField6);
-                                    	jFormattedTextField6.setBounds(231, 60, 216, 21);
+                                    	jFormattedTextField6.setBounds(241, 45, 217, 24);
                                     	jFormattedTextField6.setToolTipText("Informe o IP de acesso ao sistema.");
                                     	jFormattedTextField6.setHorizontalAlignment(SwingConstants.CENTER);
                                     	jFormattedTextField6.setColumns(50);
-                                    	jFormattedTextField6.setSize(217, 24);
                                     	jFormattedTextField6.setEditable(false);
                                     }
                                     {
                                             jLabel23 = new JLabel();
                                             jPanel5.add(jLabel23);
                                             jLabel23.setText("IP Equipamento");
-                                            jLabel23.setBounds(17, 96, 196, 27);
-                                            jLabel23.setSize(196, 24);
+                                            jLabel23.setBounds(5, 84, 199, 22);
                                     }
                                     {
                                             jFormattedTextField7 = new JFormattedTextField();
                                             jPanel5.add(jFormattedTextField7);
-                                            jFormattedTextField7.setBounds(231, 98, 214, 20);
+                                            jFormattedTextField7.setBounds(241, 84, 217, 24);
                                             jFormattedTextField7.setHorizontalAlignment(SwingConstants.CENTER);
                                             jFormattedTextField7.setColumns(50);
                                             jFormattedTextField7.setToolTipText("Informe o número do IP do equipamento.");
-                                            jFormattedTextField7.setSize(217, 24);
                                             jFormattedTextField7.setEditable(false);
                                     }
                             }

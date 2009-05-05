@@ -602,6 +602,7 @@ public class AlteraFuncionario extends JApplet {
 				jComboBox4.setSize(217, 24);
 				jComboBox4.setToolTipText("Selecione um banco da lista.");
 				jComboBox4.setMaximumRowCount(4);
+				jComboBox4.setEnabled(false);
 			}
 			{
 				jLabel14 = new JLabel();
