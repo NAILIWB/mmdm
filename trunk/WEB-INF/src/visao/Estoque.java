@@ -16,6 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 
@@ -55,12 +56,26 @@ public class Estoque extends JApplet {
     private JTabbedPane jTabbedPane1;
     @SuppressWarnings("unchecked")
     private Vector linha, coluna;
+    private JComboBox jComboBox2;
+    private JTextField jTextField10;
+    private JTextField jTextField9;
+    private JTextField jTextField8;
+    private JTextField jTextField7;
+    private JTextField jTextField6;
+    private JLabel jLabel12;
+    private JLabel jLabel11;
+    private JLabel jLabel10;
+    private JLabel jLabel9;
+    private JLabel jLabel8;
+    private JLabel jLabel7;
+    private JButton jButton2;
     private JComboBox jComboBox1;
     private JTextField jTextField5;
     private JTextField jTextField4;
     private JTextField jTextField3;
     private JTextField jTextField2;
-    private String cabecalho[]={"ID Perfil","Descrição do Perfil"};
+    private String cabecalho[]={"ID","Nome","Descrição","Bloco",
+    		"Part Number","Serial Number","Estado Conservação"};
     private String estadoConservacao[]={"","Não Utilizável","Utilizável"};
 
 
@@ -84,7 +99,7 @@ public class Estoque extends JApplet {
 public void init() {
             try {
                     {
-                            this.setSize(500,360);
+                            this.setSize(500, 310);
                             getContentPane().setLayout(null);
                             {
                                     jTabbedPane1 = new JTabbedPane();
@@ -148,6 +163,7 @@ public void init() {
                                                     	jTextField3 = new JTextField();
                                                     	jPanel3.add(jTextField3);
                                                     	jTextField3.setColumns(20);
+                                                    	jTextField3.setHorizontalAlignment(SwingConstants.CENTER);
                                                     }
                                                     {
                                                     	jLabel4 = new JLabel();
@@ -159,6 +175,7 @@ public void init() {
                                                     	jPanel3.add(jTextField4);
                                                     	jTextField4.setColumns(50);
                                                     	jTextField4.setToolTipText("Informe o Part Number do Material/Equipamento.");
+                                                    	jTextField4.setHorizontalAlignment(SwingConstants.CENTER);
                                                     }
                                                     {
                                                     	jLabel5 = new JLabel();
@@ -170,6 +187,7 @@ public void init() {
                                                     	jPanel3.add(jTextField5);
                                                     	jTextField5.setColumns(50);
                                                     	jTextField5.setToolTipText("Informe o Serial Number no Material/Equipamento.");
+                                                    	jTextField5.setHorizontalAlignment(SwingConstants.CENTER);
                                                     }
                                                     {
                                                     	jLabel6 = new JLabel();
@@ -195,11 +213,12 @@ public void init() {
                                             {
                                                     jScrollPane1 = new JScrollPane();
                                                     jPanel2.add(jScrollPane1);
-                                                    jScrollPane1.setBounds(17, 17, 431, 134);
+                                                    jScrollPane1.setBounds(17, 17, 431, 167);
                                                     jScrollPane1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
                                                     jScrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
                                                     jScrollPane1.setBorder(BorderFactory.createTitledBorder(""));
                                                     jScrollPane1.setToolTipText("Selecione um registro para alterar.");
+                                                    jScrollPane1.setSize(443, 176);
                                                     {
                                                             adicionaColuna();
                                                             adicionaLinha();                                                                
@@ -215,6 +234,15 @@ public void init() {
 
                                                     }
                                             }
+                                            {
+                                            	jButton2 = new JButton();
+                                            	jPanel2.add(jButton2);
+                                            	jButton2.setText("Consultar");
+                                            	jButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/Consultas.GIF")));
+                                            	jButton2.setBounds(178, 204, 118, 25);
+                                            	jButton2.setToolTipText("Clique para consultar os ítens de estoque.");
+                                            	jButton2.setSize(118, 26);
+                                            }
                                                                                     }
                                     {
                                     	jPanel6 = new JPanel();
@@ -226,17 +254,94 @@ public void init() {
                                     		jPanel6.add(jButton3);
                                     		jButton3.setText("Alterar");
                                     		jButton3.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icones/TipoVeiculo.GIF")));
-                                    		jButton3.setBounds(175, 184, 118, 23);
+                                    		jButton3.setBounds(165, 209, 118, 25);
                                     		jButton3.setToolTipText("Clique para alterar o registro.");
-                                    		jButton3.setEnabled(false);
                                     		jButton3.setSize(118, 26);
                                     	}
                                     	{
                                     		jPanel7 = new JPanel();
+                                    		GridLayout jPanel7Layout = new GridLayout(6, 2);
+                                    		jPanel7Layout.setHgap(5);
+                                    		jPanel7Layout.setVgap(5);
+                                    		jPanel7Layout.setColumns(2);
+                                    		jPanel7Layout.setRows(6);
                                     		jPanel6.add(jPanel7);
-                                    		jPanel7.setLayout(null);
+                                    		jPanel7.setLayout(jPanel7Layout);
                                     		jPanel7.setBounds(12, 12, 441, 160);
                                     		jPanel7.setBorder(BorderFactory.createTitledBorder(""));
+                                    		jPanel7.setSize(443, 176);
+                                    		{
+                                    			jLabel7 = new JLabel();
+                                    			jPanel7.add(jLabel7);
+                                    			jLabel7.setText("Nome");
+                                    		}
+                                    		{
+                                    			jTextField6 = new JTextField();
+                                    			jPanel7.add(jTextField6);
+                                    			jTextField6.setEditable(false);
+                                    			jTextField6.setToolTipText("Altere o nome do material/equipamento.");
+                                    		}
+                                    		{
+                                    			jLabel8 = new JLabel();
+                                    			jPanel7.add(jLabel8);
+                                    			jLabel8.setText("Descrição");
+                                    		}
+                                    		{
+                                    			jTextField7 = new JTextField();
+                                    			jPanel7.add(jTextField7);
+                                    			jTextField7.setEditable(false);
+                                    			jTextField7.setToolTipText("Altere a descrição do material/equipamento");
+                                    		}
+                                    		{
+                                    			jLabel9 = new JLabel();
+                                    			jPanel7.add(jLabel9);
+                                    			jLabel9.setText("Bloco");
+                                    		}
+                                    		{
+                                    			jTextField8 = new JTextField();
+                                    			jPanel7.add(jTextField8);
+                                    			jTextField8.setEditable(false);
+                                    			jTextField8.setToolTipText("Altere o bloco do material/equipamento.");
+                                    			jTextField8.setHorizontalAlignment(SwingConstants.CENTER);
+                                    		}
+                                    		{
+                                    			jLabel10 = new JLabel();
+                                    			jPanel7.add(jLabel10);
+                                    			jLabel10.setText("Part Number");
+                                    		}
+                                    		{
+                                    			jTextField9 = new JTextField();
+                                    			jPanel7.add(jTextField9);
+                                    			jTextField9.setEditable(false);
+                                    			jTextField9.setToolTipText("Altere o Part Number do material/equipamento.");
+                                    			jTextField9.setHorizontalAlignment(SwingConstants.CENTER);
+                                    		}
+                                    		{
+                                    			jLabel11 = new JLabel();
+                                    			jPanel7.add(jLabel11);
+                                    			jLabel11.setText("Serial Number");
+                                    		}
+                                    		{
+                                    			jTextField10 = new JTextField();
+                                    			jPanel7.add(jTextField10);
+                                    			jTextField10.setEditable(false);
+                                    			jTextField10.setToolTipText("Altere o serial number do material/equipamento.");
+                                    			jTextField10.setHorizontalAlignment(SwingConstants.CENTER);
+                                    		}
+                                    		{
+                                    			jLabel12 = new JLabel();
+                                    			jPanel7.add(jLabel12);
+                                    			jLabel12.setText("Estado Conservação");
+                                    		}
+                                    		{
+                                    			ComboBoxModel jComboBox2Model = 
+                                    				new DefaultComboBoxModel(estadoConservacao);
+                                    			jComboBox2 = new JComboBox();
+                                    			jPanel7.add(jComboBox2);
+                                    			jComboBox2.setModel(jComboBox2Model);
+                                    			jComboBox2.setToolTipText("Altere o estado de conservação do material/equipamento.");
+                                    			jComboBox2.setEnabled(false);
+                                    		}
                                     	}
                                     }
                             }
